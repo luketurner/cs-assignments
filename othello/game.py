@@ -1,11 +1,11 @@
+from copy import deepcopy
+from multiprocessing import Process, Pipe
+from sys import exit
+import operator as op
+import re
+
 from board import BoardWindow
 from player import CPUPlayer, Player
-from multiprocessing import Process, Pipe
-import operator as op
-from sys import exit
-from copy import deepcopy
-import tkMessageBox
-import re
 
 class OthelloGame:
 	def __init__(self):

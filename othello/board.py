@@ -1,7 +1,7 @@
+from multiprocessing import Process
+from ScrolledText import ScrolledText
 import Tkinter as tk
 import tkMessageBox
-from ScrolledText import ScrolledText
-from multiprocessing import Process
 
 class BoardWindow(tk.Frame):
 

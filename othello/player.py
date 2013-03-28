@@ -1,5 +1,5 @@
-import re
 import operator as op
+import re
 
 class Player:
 	def __init__(self, id):
