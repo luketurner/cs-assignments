@@ -132,6 +132,7 @@ class AbstractGame(object):
 
 	def end_game(self):
 		print("Game is over~")
+		self.board_pipe.close()
 		exit(0)
 
 
@@ -246,7 +247,17 @@ class GuiGame(AbstractGame):
 		color = self.colors[i]
 		self.moves_made += 1
 		
-		turn = player.take_turn(self.board)
+		player_pipe, recv_pipe = Pipe()
+		player_process = Process(target=player.take_turn,args=(self.board,recv_pipe)).start()
+
+		while not player_pipe.poll(0.1):
+			if self.board_pipe.poll():
+				coords = self.safe_receive()
+
+		turn = player_pipe.recv()
+
+		player_pipe.close()
+
 		if turn:
 			# CPU player returned turn value
 			if not self.is_valid_move(turn, i):

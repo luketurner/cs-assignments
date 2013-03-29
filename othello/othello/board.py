@@ -53,6 +53,7 @@ class BoardWindow(tk.Frame):
 
 	def __window_close(self, e):
 		self.game_pipe.send("END_GAME")
+		self.game_pipe.close()
 
 	def __fill_undo_frame(self):
 		self.undo_button = tk.Button(self.undo_frame, text="Undo", command=self.__undo_moves)

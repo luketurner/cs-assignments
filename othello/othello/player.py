@@ -1,12 +1,14 @@
 import operator as op
+from time import sleep
 import re
 
 class Player:
 	def __init__(self, id):
 		pass
 
-	def take_turn(self, board):
-		return False # let turn be selected by game
+	def take_turn(self, board, out):
+		out.send(False) # let turn be selected by game
+		out.close()
 
 class CPUPlayer:
 	def __init__(self, id):
@@ -49,13 +51,15 @@ class CPUPlayer:
 
 		return moves
 
-	def take_turn(self, board):
+	def take_turn(self, board, out):
 		maxs = [-1,-1,0]
 		self.board = board
+		sleep(10)
 		for col in range(len(board)):
 			for row in range(len(board)):
                                 if board[col][row] == 0:
                                         swaps = self.__get_swaps_from_move(col, row)
                                         if len(swaps) > maxs[2]:
                                                 maxs = [col,row,len(swaps)]
-		return maxs[:-1]
+		out.send(maxs[:-1])
+		out.close()
