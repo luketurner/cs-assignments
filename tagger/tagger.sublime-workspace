@@ -1,0 +1,332 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"state",
+				"state"
+			],
+			[
+				"transition",
+				"transition_freqs"
+			],
+			[
+				"f",
+				"f"
+			],
+			[
+				"find_",
+				"find_given_prefix"
+			],
+			[
+				"print",
+				"print_grams"
+			],
+			[
+				"suffix",
+				"suffix_dict"
+			],
+			[
+				"_get",
+				"_get_all_activities"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "tagger/__init__.py",
+			"settings":
+			{
+				"buffer_size": 867,
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "Packages/Python/Python.sublime-build",
+	"command_palette":
+	{
+		"height": 127.0,
+		"selected_items":
+		[
+			[
+				"git commit",
+				"Git: Commit"
+			],
+			[
+				"Packa",
+				"Package Control: Install Package"
+			],
+			[
+				"Pack",
+				"Package Control: List Packages"
+			],
+			[
+				"",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 400.0
+	},
+	"console":
+	{
+		"height": 125.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/C/Users/Luke/Documents/My Dropbox/code/natlang/tagger/tagger.sublime-project",
+		"/C/Users/Luke/Documents/My Dropbox/code/GITHUB/luketurner.github.com/_posts/2012-11-26-efficient-studying.textile",
+		"/C/Users/Luke/Documents/My Dropbox/code/GITHUB/luketurner.github.com/blog/index.textile",
+		"/C/Users/Luke/Downloads/TableB.cpp",
+		"/C/Users/Luke/Documents/My Dropbox/code/GITHUB/luketurner.github.com/_layouts/blogpost.html",
+		"/C/Users/Luke/Documents/My Dropbox/code/GITHUB/luketurner.github.com/_layouts/default.html",
+		"/C/Users/Luke/Desktop/test2/out",
+		"/C/Users/Luke/Documents/My Dropbox/code/algorithms/search/Makefile.win",
+		"/C/Users/Luke/flexget/config.yml",
+		"/C/Users/Luke/Documents/My Dropbox/code/GITHUB/luketurner.github.com/assets/less/style.less",
+		"/C/Users/Luke/Documents/My Dropbox/code/GITHUB/luketurner.github.com/_layouts/blog.html",
+		"/C/Users/Luke/Documents/My Dropbox/code/algorithms/HTMLWordFrequency/TreeNode.h",
+		"/C/Users/Luke/Documents/My Dropbox/code/algorithms/HTMLWordFrequency/BST.h",
+		"/C/Users/Luke/Documents/My Dropbox/code/algorithms/search/WordFrequency.cpp",
+		"/C/Users/Luke/Desktop/test2/SA1.WAV",
+		"/C/Users/Luke/Documents/My Dropbox/code/algorithms/HTMLWordFrequency/FrequencyItem.h",
+		"/C/Users/Luke/Documents/My Dropbox/code/GITHUB/luketurner.github.com/_posts/2012-11-19-the-modern-reader.textile",
+		"/C/Users/Luke/Documents/My Dropbox/code/GITHUB/luketurner.github.com/_includes/blogsidebar.html",
+		"/C/Users/Luke/Documents/My Dropbox/code/algorithms/HTMLWordFrequency/test.html",
+		"/C/Users/Luke/Downloads/BST.h",
+		"/C/Users/Luke/Documents/My Dropbox/code/algorithms/HTMLWordFrequency/ignore_list.txt",
+		"/C/Users/Luke/Documents/My Dropbox/code/algorithms/HTMLWordFrequency/WordFrequency.cpp",
+		"/C/Users/Luke/Downloads/TableB.h",
+		"/C/Users/Luke/Documents/My Dropbox/code/algorithms/HTMLWordFrequency/BST_2.cpp",
+		"/C/Users/Luke/Documents/My Dropbox/code/algorithms/HTMLWordFrequency/BST_2.h",
+		"/C/Users/Luke/Documents/My Dropbox/code/GITHUB/luketurner.github.com/_posts/2012-11-19-intensive-extensive-bounded.textile",
+		"/C/Users/Luke/Documents/My Dropbox/code/natlang/tagger/tagger/__init__.py",
+		"/C/Users/Luke/Documents/My Dropbox/code/GITHUB/luketurner.github.com/_posts/2012-10-29-ngrams.md",
+		"/C/Users/Luke/Documents/My Dropbox/code/natlang/tagger/tagger/models.py",
+		"/C/Users/Luke/Downloads/Incognito The Secret Lives of the Brain - David Eagleman.pdf",
+		"/C/Users/Luke/AppData/Local/Temp/KeyedItem.h",
+		"/C/Users/Luke/Documents/My Dropbox/code/natlang/ngram/ngram/model.py",
+		"/C/Users/Luke/Documents/My Dropbox/code/natlang/ngram/out4.done",
+		"/C/Users/Luke/Documents/My Dropbox/code/natlang/ngram/ngram.py",
+		"/C/Users/Luke/Documents/My Dropbox/code/natlang/ngram/out2.done",
+		"/C/Users/Luke/Documents/My Dropbox/code/natlang/ngram/out1.done",
+		"/C/Users/Luke/Documents/My Dropbox/code/natlang/ngram/out3.done",
+		"/C/Users/Luke/Documents/My Dropbox/code/natlang/ngram/out4",
+		"/C/Users/Luke/Documents/My Dropbox/code/natlang/ngram/out3",
+		"/C/Users/Luke/Documents/My Dropbox/code/natlang/ngram/ngram/selectors.py",
+		"/C/Users/Luke/Documents/My Dropbox/code/natlang/syllabification/asgn1.py",
+		"/E/Anime/The.Secret.World.Of.Arrietty.2011.720p.BRRip.XviD.AC3-ViSiON/vision.nfo",
+		"/E/Anime/The.Secret.World.Of.Arrietty.2011.720p.BRRip.XviD.AC3-ViSiON/arrietty.2010.dubbed.dvdrip.xvid-unveil.srt",
+		"/C/Users/Luke/Putty/putty-key.pub",
+		"/C/Users/Luke/Documents/My Dropbox/pgp/E92C544B2CFDB7EF0F3FFA16DA7F67B0C06A888D.asc",
+		"/C/Users/Luke/Documents/My Dropbox/code/natlang/ngram/ngram/__init__.py",
+		"/C/Users/Luke/Documents/My Dropbox/code/natlang/ngram/__init__.py",
+		"/C/Users/Luke/Documents/Microsoft Hardware/Macros/Invoke Ghost Walk.mhm",
+		"/C/Users/Luke/Documents/Microsoft Hardware/Macros/Invoke Deafening Blast.mhm",
+		"/C/Users/Luke/Documents/Microsoft Hardware/Macros/Invoke EMP.mhm",
+		"/C/Users/Luke/Documents/Microsoft Hardware/Macros/Invoke Chaos Meteor.mhm",
+		"/C/Users/Luke/Documents/Microsoft Hardware/Macros/Invoke Forge Spirits.mhm",
+		"/C/Users/Luke/Documents/Microsoft Hardware/Macros/Invoke Ice Wall.mhm",
+		"/C/Users/Luke/Documents/Microsoft Hardware/Macros/Invoke Alacrity.mhm",
+		"/C/Users/Luke/Documents/Microsoft Hardware/Macros/Invoke Sun Strike.mhm",
+		"/C/Users/Luke/Documents/Microsoft Hardware/Macros/Invoke Tornado.mhm",
+		"/C/Users/Luke/Documents/Microsoft Hardware/Macros/Invoke Cold Snap.mhm",
+		"/C/Program Files (x86)/Steam/steamapps/killercoffee/team fortress 2/tf/cfg/autoexec.cfg",
+		"/C/Users/Luke/Downloads/tsylb2-1.1.tar/tsylb2-1.1/tsylb2.c",
+		"/C/Users/Luke/Desktop/Safety/root/.minecraft/bin/version",
+		"/C/Program Files (x86)/Steam/steamapps/killercoffee/team fortress 2/tf/cfg/spy.cfg",
+		"/C/Program Files (x86)/Steam/steamapps/killercoffee/team fortress 2/tf/cfg/spy0.cfg",
+		"/E/Anime/Golden Boy 01 - 06 [Complete]/Golden_Boy.nfo",
+		"/C/Users/Luke/Documents/config.yml",
+		"/C/Users/Luke/Desktop/mcserver/server.properties",
+		"/C/Users/Luke/Desktop/RNX-N4PS-KNL-V1-1-16-91.dlf",
+		"/C/Users/Luke/Desktop/combo_not.txt",
+		"/C/Users/Luke/Documents/My Dropbox/code/animagic/animagic/local.py",
+		"/C/Users/Luke/Documents/My Dropbox/code/animagic/.gitignore",
+		"/C/Users/Luke/Documents/My Dropbox/minecraft_saves/Paradiso/minecraft_backup/session.lock",
+		"/C/Users/Luke/AppData/Roaming/Sublime Text 2/Packages/User/python3.sublime-build",
+		"/C/Users/Luke/Documents/My Dropbox/code/fitocracy-export/test.py",
+		"/C/Users/Luke/Documents/My Dropbox/code/fitocracy-export/api.py",
+		"/C/Users/Luke/Documents/My Dropbox/code/fitocracy-export/README.md",
+		"/C/Users/Luke/Documents/My Dropbox/code/fitocracy-export/.gitignore",
+		"/C/Users/Luke/AppData/Roaming/Sublime Text 2/Packages/Python/Python.sublime-build",
+		"/C/Users/Luke/AppData/Roaming/Sublime Text 2/Packages/SublimeREPL/config/Python/Main.sublime-menu",
+		"/C/Users/Luke/AppData/Roaming/Sublime Text 2/Packages/SublimeREPL/config/Python/Default.sublime-commands",
+		"/C/Users/Luke/AppData/Roaming/Sublime Text 2/Packages/User/Default (Windows).sublime-keymap",
+		"/C/Users/Luke/AppData/Roaming/Sublime Text 2/Packages/SublimeREPL/sublimerepl.py",
+		"/C/Users/Luke/AppData/Roaming/Sublime Text 2/Packages/SublimeREPL/lang_integration.py",
+		"/C/Users/Luke/AppData/Roaming/Sublime Text 2/Packages/SublimeREPL/repl.py",
+		"/C/Users/Luke/AppData/Roaming/Sublime Text 2/Packages/SublimeREPL/SublimeREPL.sublime-settings",
+		"/C/Users/Luke/AppData/Roaming/Sublime Text 2/Packages/SublimeREPL/package-metadata.json",
+		"/C/Users/Luke/AppData/Roaming/Sublime Text 2/Packages/SublimeREPL/Main.sublime-menu",
+		"/C/Users/Luke/AppData/Roaming/Sublime Text 2/Packages/Default/Default (Windows).sublime-keymap",
+		"/C/Users/Luke/AppData/Roaming/Sublime Text 2/Packages/SublimeREPL/Default (Windows).sublime-keymap",
+		"/C/Users/Luke/.ssh/id_rsa.pub"
+	],
+	"find":
+	{
+		"height": 34.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			" .",
+			" ,",
+			"``",
+			" ,",
+			" .",
+			"''",
+			"``",
+			" ,",
+			"``",
+			"''",
+			" .",
+			"f",
+			"\n",
+			"t>100</",
+			"t>50</",
+			">10<"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			".",
+			",",
+			".",
+			",",
+			".",
+			"t>200</",
+			"t>100</",
+			">50<"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "tagger/__init__.py",
+					"settings":
+					{
+						"buffer_size": 867,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								867,
+								867
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 34.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 100.0
+	},
+	"replace":
+	{
+		"height": 62.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+			[
+				"",
+				"/C/Users/Luke/Documents/My Dropbox/code/natlang/tagger/tagger.sublime-project"
+			]
+		],
+		"width": 380.0
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 175.0,
+	"status_bar_visible": true
+}
