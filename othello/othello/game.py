@@ -25,12 +25,6 @@ class AbstractGame(object):
 		self.board[3][4] = 2
 		self.board[4][4] = 1
 		self.board[4][3] = 2
-		moves = [
-				{"loc": "D4", "color": self.colors[1]},
-				{"loc": "E4", "color": self.colors[2]},
-				{"loc": "D5", "color": self.colors[2]},
-				{"loc": "E5", "color": self.colors[1]},
-				]
 
 	def is_valid_move(self, coords, player):
 		if coords == [-1, -1]:
