@@ -54,7 +54,7 @@ class CPUPlayer:
 	def take_turn(self, board, out):
 		maxs = [-1,-1,0]
 		self.board = board
-		sleep(10)
+		#sleep(10) #TODO
 		for col in range(len(board)):
 			for row in range(len(board)):
                                 if board[col][row] == 0:
