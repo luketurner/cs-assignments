@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Cipher Machine</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_output_text">OutputText</string>
+    <string name="title_cipher_list">Ciphers</string>
+    <string name="title_cipher_detail">Cipher Detail</string>
+
+</resources>
