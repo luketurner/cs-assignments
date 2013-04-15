@@ -2,6 +2,7 @@ package cs.gonzaga.ciphermachine;
 
 import android.os.Bundle;
 import android.app.Activity;
+import android.content.Intent;
 import android.view.Menu;
 
 public class InputText extends Activity {
@@ -10,6 +11,11 @@ public class InputText extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_input_text);
+
+        Intent intent = new Intent();
+        intent.setClassName("cs.gonzaga.ciphermachine", "CipherSelector");
+        intent.putExtra("outputText", "Test input text.");
+        this.startActivity(intent);
     }
 
 
