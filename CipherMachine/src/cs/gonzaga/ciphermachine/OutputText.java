@@ -10,8 +10,8 @@ public class OutputText extends Activity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
-		outputText = savedInstanceState.getString("outputText");
 		super.onCreate(savedInstanceState);
+		outputText = savedInstanceState.getString("outputText");
 		setContentView(R.layout.activity_output_text);
 	}
 

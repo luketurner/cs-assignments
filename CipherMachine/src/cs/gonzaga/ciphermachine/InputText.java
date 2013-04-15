@@ -13,7 +13,7 @@ public class InputText extends Activity {
         setContentView(R.layout.activity_input_text);
 
         Intent intent = new Intent();
-        intent.setClassName("cs.gonzaga.ciphermachine", "CipherSelector");
+        intent.setClassName(this, "cs.gonzaga.ciphermachine.CipherSelector");
         intent.putExtra("outputText", "Test input text.");
         this.startActivity(intent);
     }

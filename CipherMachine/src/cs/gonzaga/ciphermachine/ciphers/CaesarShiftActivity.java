@@ -31,7 +31,7 @@ public class CaesarShiftActivity extends Activity {
 		Intent intent = new Intent();
 		String outputText = "";
 		if (actionType.equals("Encode")) {
-			intent.setClassName("cs.gonzaga.ciphermachine", "OutputText");
+			intent.setClassName(this, "cs.gonzaga.ciphermachine.OutputText");
 			outputText = CaesarShift.encrypt(outputText);
 		}
 		intent.putExtra("outputText", outputText);
