@@ -5,9 +5,12 @@ import android.app.Activity;
 import android.view.Menu;
 
 public class OutputText extends Activity {
+	
+	String outputText = "";
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
+		outputText = savedInstanceState.getString("outputText");
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_output_text);
 	}
