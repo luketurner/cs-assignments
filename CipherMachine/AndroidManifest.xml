@@ -27,22 +27,6 @@
             android:label="@string/title_activity_output_text" >
         </activity>
         <activity
-            android:name="cs.gonzaga.ciphermachine.CipherListActivity"
-            android:label="@string/title_cipher_list"
-            android:parentActivityName="cs.gonzaga.ciphermachine.InputText" >
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="cs.gonzaga.ciphermachine.InputText" />
-        </activity>
-        <activity
-            android:name="cs.gonzaga.ciphermachine.CipherDetailActivity"
-            android:label="@string/title_cipher_detail"
-            android:parentActivityName=".CipherListActivity" >
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".CipherListActivity" />
-        </activity>
-        <activity
             android:name="cs.gonzaga.ciphermachine.CipherSelector"
             android:label="@string/title_activity_cipher_selector"
             android:parentActivityName="InputText" >
