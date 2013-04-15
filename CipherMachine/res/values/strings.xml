@@ -7,5 +7,7 @@
     <string name="title_activity_output_text">OutputText</string>
     <string name="title_cipher_list">Ciphers</string>
     <string name="title_cipher_detail">Cipher Detail</string>
+    <string name="title_activity_cipher_selector">CipherSelector</string>
+    <string name="title_activity_caesar_shift">CaesarShiftActivity</string>
 
 </resources>

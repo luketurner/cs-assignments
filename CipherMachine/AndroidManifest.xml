@@ -42,6 +42,18 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".CipherListActivity" />
         </activity>
+        <activity
+            android:name="cs.gonzaga.ciphermachine.CipherSelector"
+            android:label="@string/title_activity_cipher_selector"
+            android:parentActivityName="InputText" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="InputText" />
+        </activity>
+        <activity
+            android:name="cs.gonzaga.ciphermachine.ciphers.CaesarShiftActivity"
+            android:label="@string/title_activity_caesar_shift" >
+        </activity>
     </application>
 
 </manifest>
