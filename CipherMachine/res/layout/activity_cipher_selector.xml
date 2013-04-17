@@ -15,7 +15,39 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:onClick="onCipherSelected"
-        android:tag="Caesar Shift"
-        android:text="Caesar Shift" />
+        android:tag="@string/cipher_select_caesar"
+        android:text="@string/cipher_select_caesar" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onCipherSelected"
+        android:tag="@string/cipher_select_vignere"
+        android:text="@string/cipher_select_vignere" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onCipherSelected"
+        android:tag="@string/cipher_select_enigma"
+        android:text="@string/cipher_select_enigma" />
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onCipherSelected"
+        android:tag="@string/cipher_select_playfair"
+        android:text="@string/cipher_select_playfair" />
+
+    <Button
+        android:id="@+id/button5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onCipherSelected"
+        android:tag="@string/cipher_select_route"
+        android:text="@string/cipher_select_route" />
 
 </LinearLayout>

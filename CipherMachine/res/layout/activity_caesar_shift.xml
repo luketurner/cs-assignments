@@ -19,4 +19,18 @@
         android:tag="Encrypt"
         android:text="Encrypt" />
 
+    <EditText
+        android:id="@+id/caesar_activity_shift"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/button1"
+        android:layout_centerHorizontal="true"
+        android:ems="10"
+        android:inputType="numberSigned"
+        android:text="2"
+        android:textAlignment="center" >
+
+        <requestFocus />
+    </EditText>
+
 </RelativeLayout>

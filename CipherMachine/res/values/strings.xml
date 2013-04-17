@@ -9,5 +9,10 @@
     <string name="title_cipher_detail">Cipher Detail</string>
     <string name="title_activity_cipher_selector">CipherSelector</string>
     <string name="title_activity_caesar_shift">CaesarShiftActivity</string>
+    <string name="cipher_select_caesar">Caesar Shift</string>
+    <string name="cipher_select_vignere">Vignere</string>
+    <string name="cipher_select_enigma">Enigma</string>
+    <string name="cipher_select_playfair">Playfair</string>
+    <string name="cipher_select_route">Route Cipher</string>
 
 </resources>

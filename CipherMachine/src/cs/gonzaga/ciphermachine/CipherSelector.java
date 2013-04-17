@@ -58,8 +58,8 @@ public class CipherSelector extends Activity {
 		String cipherName = (String) v.getTag();
 		Intent intent = new Intent();
 		intent.putExtra("inputText", inputText);
-		if (cipherName.equals("Caesar Shift")) {
-			intent.setClassName(this, "cs.gonzaga.ciphermachine.ciphers.CaesarShiftActivity");
+		if (cipherName.equals(getResources().getString(R.string.cipher_select_caesar))) {
+			intent.setClass(this, cs.gonzaga.ciphermachine.ciphers.CaesarShiftActivity.class);
 		}
 		this.startActivity(intent);
 	}

@@ -8,6 +8,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.view.Menu;
 import android.view.View;
+import android.widget.EditText;
 
 public class CaesarShiftActivity extends Activity {
 	
@@ -29,11 +30,12 @@ public class CaesarShiftActivity extends Activity {
 	
 	public void onButtonClick(View v) {
 		String actionType = (String) v.getTag();
+		String shift = ((EditText) findViewById(R.id.caesar_activity_shift)).getText().toString();
 		Intent intent = new Intent();
 		String outputText = "";
 		if (actionType.equals("Encrypt")) {
 			intent.setClass(this, cs.gonzaga.ciphermachine.OutputText.class);
-			outputText = CaesarShift.encrypt(inputText);
+			outputText = CaesarShift.encrypt(inputText, Integer.parseInt(shift));
 		}
 		intent.putExtra("outputText", outputText);
 		this.startActivity(intent);
