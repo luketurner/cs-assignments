@@ -14,7 +14,7 @@ public class InputText extends Activity {
 
         Intent intent = new Intent();
         intent.setClassName(this, "cs.gonzaga.ciphermachine.CipherSelector");
-        intent.putExtra("outputText", "Test input text.");
+        intent.putExtra("inputText", "This is a test.");
         this.startActivity(intent);
     }
 

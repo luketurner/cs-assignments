@@ -11,12 +11,13 @@ import android.view.View;
 
 public class CaesarShiftActivity extends Activity {
 	
-	String outputText = "";
+	private String inputText = "";
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_caesar_shift);
+		inputText = getIntent().getExtras().getString("inputText");
 	}
 
 	@Override
@@ -31,8 +32,8 @@ public class CaesarShiftActivity extends Activity {
 		Intent intent = new Intent();
 		String outputText = "";
 		if (actionType.equals("Encrypt")) {
-			intent.setClassName("cs.gonzaga.ciphermachine", "cs.gonzaga.ciphermachine.OutputText");
-			outputText = CaesarShift.encrypt(outputText);
+			intent.setClass(this, cs.gonzaga.ciphermachine.OutputText.class);
+			outputText = CaesarShift.encrypt(inputText);
 		}
 		intent.putExtra("outputText", outputText);
 		this.startActivity(intent);

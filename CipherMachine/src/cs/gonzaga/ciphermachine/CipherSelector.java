@@ -18,6 +18,7 @@ public class CipherSelector extends Activity {
 		setContentView(R.layout.activity_cipher_selector);
 		// Show the Up button in the action bar.
 		setupActionBar();
+		inputText = getIntent().getExtras().getString("inputText");
 	}
 
 	/**
