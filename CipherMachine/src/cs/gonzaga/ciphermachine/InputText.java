@@ -12,6 +12,11 @@ public class InputText extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_input_text);
 
+    }
+    
+    protected void onStart() {
+    	super.onStart();
+
         Intent intent = new Intent();
         intent.setClassName(this, "cs.gonzaga.ciphermachine.CipherSelector");
         intent.putExtra("inputText", "This is a test.");
