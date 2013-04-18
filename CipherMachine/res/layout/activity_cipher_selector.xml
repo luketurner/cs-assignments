@@ -11,7 +11,7 @@
     tools:context=".CipherSelector" >
 
     <Button
-        android:id="@+id/button1"
+        android:id="@+id/cipher_select_caesar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:onClick="onCipherSelected"
@@ -19,7 +19,7 @@
         android:text="@string/cipher_select_caesar" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/cipher_select_vignere"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:onClick="onCipherSelected"
@@ -27,7 +27,7 @@
         android:text="@string/cipher_select_vignere" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/cipher_select_enigma"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:onClick="onCipherSelected"
@@ -35,7 +35,7 @@
         android:text="@string/cipher_select_enigma" />
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/cipher_select_playfair"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:onClick="onCipherSelected"
@@ -43,7 +43,7 @@
         android:text="@string/cipher_select_playfair" />
 
     <Button
-        android:id="@+id/button5"
+        android:id="@+id/cipher_select_route"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:onClick="onCipherSelected"
