@@ -16,11 +16,6 @@
         <activity
             android:name="cs.gonzaga.ciphermachine.InputText"
             android:label="@string/app_name" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name="cs.gonzaga.ciphermachine.OutputText"
@@ -37,6 +32,15 @@
         <activity
             android:name="cs.gonzaga.ciphermachine.ciphers.CaesarShiftActivity"
             android:label="@string/title_activity_caesar_shift" >
+        </activity>
+        <activity
+            android:name="cs.gonzaga.ciphermachine.ChooseInputType"
+            android:label="@string/title_activity_choose_input_type" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
     </application>
 
