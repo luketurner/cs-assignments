@@ -16,29 +16,20 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="71dp"
         android:ems="10"
-        android:hint="@string/input_cypher_text" >
+        android:hint="@string/input_cipher_hint" >
 
         <requestFocus />
     </EditText>
 
     <Button
-        android:id="@+id/buttonDecypher"
+        android:id="@+id/buttonInput"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignRight="@+id/editTextInput"
-        android:layout_below="@+id/editTextInput"
-        android:layout_marginTop="139dp"
-        android:text="@string/decypher"
-        android:onClick="onDecypherClick" />
-
-    <Button
-        android:id="@+id/buttonEncypher"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/buttonDecypher"
-        android:layout_alignBottom="@+id/buttonDecypher"
         android:layout_alignLeft="@+id/editTextInput"
-        android:text="@string/encypher"
-        android:onClick="onEncypherClick" />
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/editTextInput"
+        android:layout_marginBottom="143dp"
+        android:onClick="onInputClick"
+        android:text="@string/input" />
 
 </RelativeLayout>

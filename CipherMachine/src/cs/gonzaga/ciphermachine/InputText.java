@@ -9,8 +9,7 @@ import android.widget.Button;
 import android.widget.EditText;
 
 public class InputText extends Activity {
-	Button buttonEncypherClick;
-	Button buttonDecypherClick;
+	Button buttonInputClick;
 	EditText editTextInput;
 	
     @Override
@@ -18,8 +17,7 @@ public class InputText extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_input_text);
         
-        buttonEncypherClick = (Button)findViewById(R.id.buttonEncypher);
-        buttonDecypherClick = (Button)findViewById(R.id.buttonDecypher);
+        buttonInputClick = (Button)findViewById(R.id.buttonInput);
         editTextInput = (EditText)findViewById(R.id.editTextInput);
     }
 
@@ -31,21 +29,10 @@ public class InputText extends Activity {
         return true;
     }
     
-    public void onEncypherClick(View v) {
+    public void onInputClick(View v) {
     	String inputText = editTextInput.getText().toString(); 	
-//    	editTextInput.setText("ENCYPHER_TEXT: " + inputText);
         Intent intent = new Intent(this, CipherSelector.class);
-//        intent.setClassName("cs.gonzaga.ciphermachine", "CipherSelector");
         intent.putExtra("inputText", inputText);
         this.startActivity(intent);
     }
-    
-    public void onDecypherClick(View v) {
-    	String inputText = editTextInput.getText().toString();
-//    	editTextInput.setText("DECYPHER_TEXT: " + inputText);
-        Intent intent = new Intent(this, CipherSelector.class);
-//        intent.setClassName("cs.gonzaga.ciphermachine", "CipherSelector");
-        intent.putExtra("inputText", inputText);
-        this.startActivity(intent);
-    }    
 }
