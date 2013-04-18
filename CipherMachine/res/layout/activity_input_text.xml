@@ -8,9 +8,37 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".InputText" >
 
-    <TextView
+    <EditText
+        android:id="@+id/editTextInput"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/hello_world" />
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="71dp"
+        android:ems="10"
+        android:hint="@string/input_cypher_text" >
+
+        <requestFocus />
+    </EditText>
+
+    <Button
+        android:id="@+id/buttonDecypher"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/editTextInput"
+        android:layout_below="@+id/editTextInput"
+        android:layout_marginTop="139dp"
+        android:text="@string/decypher"
+        android:onClick="onDecypherClick" />
+
+    <Button
+        android:id="@+id/buttonEncypher"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/buttonDecypher"
+        android:layout_alignBottom="@+id/buttonDecypher"
+        android:layout_alignLeft="@+id/editTextInput"
+        android:text="@string/encypher"
+        android:onClick="onEncypherClick" />
 
 </RelativeLayout>
