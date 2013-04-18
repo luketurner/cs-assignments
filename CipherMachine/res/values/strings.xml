@@ -14,11 +14,10 @@
     <string name="cipher_select_enigma">Enigma</string>
     <string name="cipher_select_playfair">Playfair</string>
     <string name="cipher_select_route">Route Cipher</string>
-    <string name="input_cypher_text">Input Cipher Text</string>
-    <string name="decypher">Decipher</string>
-    <string name="encypher">Encipher</string>
-    <string name="file">File</string>
-    <string name="manual">Manual</string>
-    <string name="title_activity_choose_input_type">ChooseInputType</string>
+    <string name="input_cipher_hint">Input Cipher Text</string>
+    <string name="input_type_file">File</string>
+    <string name="input_type_manual">Manual</string>
+    <string name="title_activity_choose_input_type">Choose Input Type</string>
+    <string name="input">Enter Text</string>
 
 </resources>
