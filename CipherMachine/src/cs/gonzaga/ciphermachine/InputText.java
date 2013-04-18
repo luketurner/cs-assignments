@@ -19,9 +19,9 @@ public class InputText extends Activity {
         
         buttonInputClick = (Button)findViewById(R.id.buttonInput);
         editTextInput = (EditText)findViewById(R.id.editTextInput);
+        editTextInput.setOnEditorActionListener(new DoneOnEditorActionListener());
     }
-
-
+    
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
