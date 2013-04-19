@@ -1,18 +1,12 @@
-import timeit
+import pycallgraph
+from othello.player import CPUPlayer
 
-boards=[
-"[[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,1,2,0,0,0],[0,0,0,2,1,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0]]",
-"[[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,1,2],[0,0,0,0,0,1,2,0],[0,0,0,0,1,2,0,0],[0,0,0,1,2,0,0,0],[0,0,1,2,0,0,0,0],[0,1,2,0,0,0,0,0]]",
-"[[0,0,0,0,0,0,0,0],[0,2,1,0,0,0,0,0],[0,1,1,2,0,0,0,0],[0,0,1,2,2,2,1,0],[0,0,0,1,2,2,1,0],[0,0,0,0,1,2,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0]]"]
+board=[[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,1,2,0,0,0],[0,0,0,2,1,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0]]
 
-players=[1,2]
+a = CPUPlayer(1)
 
-run="a=Process(target=p.take_turn,args=(b,p2));a.start();a.join();"
+pycallgraph.start_trace()
 
-for i in boards:
-    for j in players:
-        setup="from multiprocessing import Process,Pipe;from othello.player import CPUPlayer;p1,p2=Pipe();b={};p=CPUPlayer({})".format(i, j)
-        print "Board: {}\nPlayer: {}".format(i,j)
-        print "Time: "
-        print timeit.timeit(stmt=run, setup=setup, number=1)
-        print '-------------'
+a.take_turn(board)
+
+pycallgraph.make_dot_graph('profile.png')
