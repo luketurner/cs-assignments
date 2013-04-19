@@ -1,19 +1,18 @@
 import timeit
 
-
-
-
-
 boards=[
 "[[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,1,2,0,0,0],[0,0,0,2,1,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0]]",
 "[[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,1,2],[0,0,0,0,0,1,2,0],[0,0,0,0,1,2,0,0],[0,0,0,1,2,0,0,0],[0,0,1,2,0,0,0,0],[0,1,2,0,0,0,0,0]]",
 "[[0,0,0,0,0,0,0,0],[0,2,1,0,0,0,0,0],[0,1,1,2,0,0,0,0],[0,0,1,2,2,2,1,0],[0,0,0,1,2,2,1,0],[0,0,0,0,1,2,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0]]"]
 
-players=['1','2']
+players=[1,2]
 
-setup="from multiprocessing import Process,Pipe;from othello.player import CPUPlayer;\
-	   p={};b={}".format(players[0], boards[0])
-run="a=Process(target=CPUPlayer(p).take_turn,args=(b,Pipe()[1]));a.start();a.join()"
+run="a=Process(target=p.take_turn,args=(b,p2));a.start();a.join();"
 
-print "Running speed test."
-print timeit.timeit(run, setup)
+for i in boards:
+    for j in players:
+        setup="from multiprocessing import Process,Pipe;from othello.player import CPUPlayer;p1,p2=Pipe();b={};p=CPUPlayer({})".format(i, j)
+        print "Board: {}\nPlayer: {}".format(i,j)
+        print "Time: "
+        print timeit.timeit(stmt=run, setup=setup, number=1)
+        print '-------------'
