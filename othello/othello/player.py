@@ -174,7 +174,7 @@ class CPUPlayer:
 		root = BoardNode(self.board, [], self.us)
 
 		def prune(child):
-			a = self.ab_prune(child, 9, NegativeInfinity(), Infinity())
+			a = self.ab_prune(child, 8, NegativeInfinity(), Infinity())
 			print(child.move, a)
 			return a
 
