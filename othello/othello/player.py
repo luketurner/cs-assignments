@@ -149,7 +149,6 @@ class CPUPlayer:
 		else:
 			return scores[1]-scores[0]
 
-	@memoized
 	def ab_prune(self, node, depth, alpha, beta):
 
 		if depth == 0 or not node.has_children():
