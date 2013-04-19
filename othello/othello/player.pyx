@@ -137,14 +137,14 @@ class BoardNode(object):
 
 		return moves
 
-cdef int fitness(self, node):
+cdef int fitness(node):
 	scores = node.get_scores()
 	if self.us == 1:
 		return scores[0]-scores[1]
 	else:
 		return scores[1]-scores[0]
 
-cdef int ab_prune(self, node, int depth, int alpha, int beta, int player):
+cdef int ab_prune(node, int depth, int alpha, int beta, int player):
 
 	if depth == 0 or not node.has_children():
 		return fitness(node)
