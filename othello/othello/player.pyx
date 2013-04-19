@@ -142,14 +142,14 @@ class CPUPlayer:
 		self.us = id
 		self.them = 3 - id
 
-	def fitness(self, node):
+	cdef int fitness(self, node):
 		scores = node.get_scores()
 		if self.us == 1:
 			return scores[0]-scores[1]
 		else:
 			return scores[1]-scores[0]
 
-	def ab_prune(self, node, depth, alpha, beta):
+	cdef int ab_prune(self, node, int depth, int alpha, int beta):
 
 		if depth == 0 or not node.has_children():
 			return self.fitness(node)
