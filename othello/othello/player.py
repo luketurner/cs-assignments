@@ -18,44 +18,44 @@ class Player:
 
 
 class Infinity(object):
-    def __cmp__(self,a):
-        return 1
+	def __cmp__(self,a):
+		return 1
 class NegativeInfinity(object):
-    def __cmp__(self,a):
-        return -1
+	def __cmp__(self,a):
+		return -1
 
 class memoized(object):
-   '''Decorator. Caches a function's return value each time it is called.
-   If called later with the same arguments, the cached value is returned
-   (not reevaluated).
-   '''
-   def __init__(self, func):
-      self.func = func
-      self.cache = {}
+	'''Decorator. Caches a function's return value each time it is called.
+	If called later with the same arguments, the cached value is returned
+	(not reevaluated).
+	'''
+	def __init__(self, func):
+		self.func = func
+		self.cache = {}
 
-   def __call__(self, *args):
-      if not isinstance(args, collections.Hashable):
-         # uncacheable. a list, for instance.
-         # better to not cache than blow up.
-         return self.func(*args)
+	def __call__(self, *args):
+		if not isinstance(args, collections.Hashable):
+			# uncacheable. a list, for instance.
+			# better to not cache than blow up.
+			return self.func(*args)
 
-      if args[0:2] in self.cache:
-         return self.cache[args[0:2]]
+		if args[0:2] in self.cache:
+			return self.cache[args[0:2]]
 
-      else:
-         value = self.func(*args)
-         self.cache[args[0:2]] = value
-         return value
+		else:
+			value = self.func(*args)
+			self.cache[args[0:2]] = value
+			return value
 
-   def __repr__(self):
-      '''Return the function's docstring.'''
-      return self.func.__doc__
+	def __repr__(self):
+	  	'''Return the function's docstring.'''
+	  	return self.func.__doc__
 
-   def __get__(self, obj, objtype):
-      '''Support instance methods.'''
-      return functools.partial(self.__call__, obj)
+	def __get__(self, obj, objtype):
+	  	'''Support instance methods.'''
+	  	return functools.partial(self.__call__, obj)
 
-        
+		
 class BoardNode(object):
 	
 	def __init__(self, board, move, player):
