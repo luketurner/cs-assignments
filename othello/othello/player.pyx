@@ -137,35 +137,35 @@ class BoardNode(object):
 
 		return moves
 
+cdef int fitness(self, node):
+	scores = node.get_scores()
+	if self.us == 1:
+		return scores[0]-scores[1]
+	else:
+		return scores[1]-scores[0]
+
+cdef int ab_prune(self, node, int depth, int alpha, int beta, int player):
+
+	if depth == 0 or not node.has_children():
+		return fitness(node)
+
+	if node.player == player:
+		for child in node.children():
+			alpha = max(alpha, ab_prune(child, depth-1, alpha, beta, player))
+			if beta <= alpha:
+				break
+		return alpha
+	else:
+		for child in node.children():
+			beta = min(beta, ab_prune(child, depth-1, alpha, beta, player))
+			if beta <= alpha:
+				break
+		return beta
+
 class CPUPlayer:
 	def __init__(self, id):
 		self.us = id
 		self.them = 3 - id
-
-	cdef int fitness(self, node):
-		scores = node.get_scores()
-		if self.us == 1:
-			return scores[0]-scores[1]
-		else:
-			return scores[1]-scores[0]
-
-	cdef int ab_prune(self, node, int depth, int alpha, int beta):
-
-		if depth == 0 or not node.has_children():
-			return self.fitness(node)
-
-		if node.player == self.us:
-			for child in node.children():
-				alpha = max(alpha, self.ab_prune(child, depth-1, alpha, beta))
-				if beta <= alpha:
-					break
-			return alpha
-		else:
-			for child in node.children():
-				beta = min(beta, self.ab_prune(child, depth-1, alpha, beta))
-				if beta <= alpha:
-					break
-			return beta
 
 	def take_turn(self, board, out):
 		self.board = board
@@ -173,7 +173,7 @@ class CPUPlayer:
 		root = BoardNode(self.board, [], self.us)
 
 		def prune(child):
-			a = self.ab_prune(child, 8, NegativeInfinity(), Infinity())
+			a = ab_prune(child, 8, -1000, 1000, self.us)
 			print(child.move, a)
 			return a
 
