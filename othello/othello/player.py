@@ -174,7 +174,7 @@ class CPUPlayer:
 			print(child.move, a)
 			return a
 
-		timer = Timer(5.0, done_timer)
+		timer = Timer(5.0, done_timer, [done])
 		timer.start()
 
 
