@@ -110,8 +110,7 @@ class BoardNode(object):
 				to_change.append([opx(x,i), opy(y,i)])
 				i += 1
 			if valid(opx(x,i),opy(y,i)) and self.board[opx(x,i)][opy(y,i)] == self.player:
-				for square in to_change:
-					moves.append(square)
+				moves.extend(to_change)
 
 		def null(x,y):
 			return x
