@@ -148,15 +148,17 @@ class CPUPlayer:
 			return self.fitness(node)
 
 		if node.player == self.us:
-			compare = max
+			for child in node.children():
+				alpha = max(alpha, self.ab_prune(child, depth-1, alpha, beta))
+				if beta <= alpha:
+					break
+			return alpha
 		else:
-			compare = min
-
-		for child in node.children():
-			alpha = compare(alpha, self.ab_prune(child, depth-1, alpha, beta))
-			if beta <= alpha:
-				break
-		return alpha
+			for child in node.children():
+				beta = min(beta, self.ab_prune(child, depth-1, alpha, beta))
+				if beta <= alpha:
+					break
+			return beta
 
 
 	def take_turn(self, board):
