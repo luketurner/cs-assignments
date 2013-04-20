@@ -63,19 +63,12 @@ class BoardNode(object):
 		self.move = move
 		self.player = player
 
-	def has_children(self):
-		for x,y in product(range(8), repeat=2):
-			if self.board[x][y] == 0:
-				moves = self.get_swaps_from_move(x,y)
-				if len(moves) > 0:
-					return True
-
 	def children(self):
 		for board, move in self.next_moves():
 			yield BoardNode(board, move, 3 - self.player)
 	
 	def next_moves(self):
-		for x,y in product(range(8), repeat=2):
+		for x,y in product(xrange(8), repeat=2):
 			if self.board[x][y] == 0:
 				moves = self.get_swaps_from_move(x,y)
 				if len(moves) > 0:
@@ -117,8 +110,7 @@ class BoardNode(object):
 				to_change.append([opx(x,i), opy(y,i)])
 				i += 1
 			if valid(opx(x,i),opy(y,i)) and self.board[opx(x,i)][opy(y,i)] == self.player:
-				for square in to_change:
-					moves.append(square)
+				moves.extend(to_change)
 
 		def null(x,y):
 			return x
@@ -151,7 +143,7 @@ class CPUPlayer:
 
 	def ab_prune(self, node, depth, alpha, beta):
 
-		if depth == 0 or not node.has_children():
+		if depth == 0 or not any(node.children()):
 			return self.fitness(node)
 
 		if node.player == self.us:
@@ -167,7 +159,8 @@ class CPUPlayer:
 					break
 			return beta
 
-	def take_turn(self, board, out):
+
+	def take_turn(self, board):
 		self.board = board
 
 		root = BoardNode(self.board, [], self.us)
@@ -178,5 +171,3 @@ class CPUPlayer:
 			return a
 
 		coords = max(root.children(), key=prune).move
-		out.send(coords)
-		out.close()
