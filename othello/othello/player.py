@@ -5,7 +5,7 @@ import functools
 import operator as op
 from itertools import product
 from copy import deepcopy
-from time import sleep
+from threading import Timer, Event
 import re
 
 class Player:
