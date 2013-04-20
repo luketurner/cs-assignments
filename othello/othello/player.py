@@ -141,20 +141,20 @@ class CPUPlayer:
 		else:
 			return scores[1]-scores[0]
 
-	def ab_prune(self, node, depth, alpha, beta):
+	def ab_prune(self, node, depth, alpha, beta, done):
 
-		if depth == 0 or not any(node.children()):
+		if depth == 0 or done.is_set() or not any(node.children()):
 			return self.fitness(node)
 
 		if node.player == self.us:
 			for child in node.children():
-				alpha = max(alpha, self.ab_prune(child, depth-1, alpha, beta))
+				alpha = max(alpha, self.ab_prune(child, depth-1, alpha, beta, done))
 				if beta <= alpha:
 					break
 			return alpha
 		else:
 			for child in node.children():
-				beta = min(beta, self.ab_prune(child, depth-1, alpha, beta))
+				beta = min(beta, self.ab_prune(child, depth-1, alpha, beta, done))
 				if beta <= alpha:
 					break
 			return beta
@@ -165,10 +165,18 @@ class CPUPlayer:
 
 		root = BoardNode(self.board, [], self.us)
 
+		done = Event()
+		def done_timer(event):
+			event.set()
+
 		def prune(child):
-			a = self.ab_prune(child, 6, NegativeInfinity(), Infinity())
+			a = self.ab_prune(child, 6, NegativeInfinity(), Infinity(), done)
 			print(child.move, a)
 			return a
+
+		timer = Timer(5.0, done_timer)
+		timer.start()
+
 
 		coords = max(root.children(), key=prune).move
 		out.send(coords)
