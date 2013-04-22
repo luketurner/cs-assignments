@@ -9,6 +9,8 @@ import re
 
 import numpy
 
+import cfunc
+
 class Player:
 	def __init__(self, id):
 		pass
@@ -39,7 +41,7 @@ class BoardNode(object):
 	def next_moves(self):
 		for x,y in product(xrange(8), repeat=2):
 			if self.board[x,y] == 0:
-				moves = self.get_swaps_from_move(x,y)
+				moves = cfunc.get_swaps_from_move(self.board, x, y, self.player)
 				if len(moves) > 0:
 					moves.append([x,y])
 					yield self.alter_state(moves), [x,y]
@@ -76,10 +78,10 @@ class BoardNode(object):
 		def check_direction(opx, opy):
 			i = 1
 			to_change = []
-			while valid(opx(x,i),opy(y,i)) and self.board[opx(x,i)][opy(y,i)] == enemy_index:
+			while valid(opx(x,i),opy(y,i)) and self.board[opx(x,i),opy(y,i)] == enemy_index:
 				to_change.append([opx(x,i), opy(y,i)])
 				i += 1
-			if valid(opx(x,i),opy(y,i)) and self.board[opx(x,i)][opy(y,i)] == self.player:
+			if valid(opx(x,i),opy(y,i)) and self.board[opx(x,i),opy(y,i)] == self.player:
 				moves.extend(to_change)
 
 		def null(x,y):
@@ -140,7 +142,7 @@ class CPUPlayer:
 			event.set()
 
 		def prune(child):
-			a = self.ab_prune(child, 6, -1000, 1000, done)
+			a = self.ab_prune(child, 8, -1000, 1000, done)
 			print(child.move, a)
 			return a
 

@@ -1,35 +1,74 @@
-cimport numpy as np
+import numpy
+cimport numpy
+DTYPE = numpy.int
+ctypedef numpy.int_t DTYPE_T
 
-cdef get_swaps_from_move(board, int x, int y):
-	cint enemy_index = 3 - self.player
+def get_swaps_from_move(numpy.ndarray board, int x, int y, int player):
+	cdef int enemy_index = 3 - player
 	moves = []
-	cint size = 8
 
-	cdef boolean valid(int x,int y):
-		return (0 <= x < size) and (0 <= y < size)
+	i = 1
+	to_change = []
+	while (0 <= x+i < 8) and (0 <= y+i < 8) and board[x+i,y+i] == (3 - player):
+		to_change.append([x+i, y+i])
+		i += 1
+	if (0 <= x+i < 8) and (0 <= y+i < 8) and board[x+i,y+i] == player:
+		moves.extend(to_change)
 
-	cdef check_direction(opx, opy):
-		cint i = 1
-		to_change = []
-		while valid(opx(x,i),opy(y,i)) and self.board[opx(x,i)][opy(y,i)] == enemy_index:
-			to_change.append([opx(x,i), opy(y,i)])
-			i += 1
-		if valid(opx(x,i),opy(y,i)) and self.board[opx(x,i)][opy(y,i)] == self.player:
-			moves.extend(to_change)
+	i = 1
+	to_change = []
+	while (0 <= x+i < 8) and (0 <= y-i < 8) and board[x+i,y-i] == enemy_index:
+		to_change.append([x+i, y-i])
+		i += 1
+	if (0 <= x+i < 8) and (0 <= y-i < 8) and board[x+i,y-i] == player:
+		moves.extend(to_change)
 
-	cdef null(int x,int y):
-		return x
+	i = 1
+	to_change = []
+	while (0 <= x-i < 8) and (0 <= y+i < 8) and board[x-i,y+i] == enemy_index:
+		to_change.append([x-i, y+i])
+		i += 1
+	if (0 <= x-i < 8) and (0 <= y+i < 8) and board[x-i,y+i] == player:
+		moves.extend(to_change)
 
-	#diagonals
-	check_direction(op.add, op.add)
-	check_direction(op.sub, op.add) 
-	check_direction(op.add, op.sub)
-	check_direction(op.sub, op.sub)
+	i = 1
+	to_change = []
+	while (0 <= x-i < 8) and (0 <= y-i < 8) and board[x-i,y-i] == enemy_index:
+		to_change.append([x-i, y-i])
+		i += 1
+	if (0 <= x-i < 8) and (0 <= y-i < 8) and board[x-i,y-i] == player:
+		moves.extend(to_change)
 
-	#straights
-	check_direction(op.add, null)
-	check_direction(op.sub, null)
-	check_direction(null, op.add)
-	check_direction(null, op.sub)
+	i = 1
+	to_change = []
+	while (0 <= x-i < 8) and (0 <= y < 8) and board[x-i,y] == enemy_index:
+		to_change.append([x-i, y])
+		i += 1
+	if (0 <= x-i < 8) and (0 <= y < 8) and board[x-i,y] == player:
+		moves.extend(to_change)
+
+	i = 1
+	to_change = []
+	while (0 <= x+i < 8) and (0 <= y < 8) and board[x+i,y] == enemy_index:
+		to_change.append([x+i, y])
+		i += 1
+	if (0 <= x+i < 8) and (0 <= y < 8) and board[x+i,y] == player:
+		moves.extend(to_change)
+
+	i = 1
+	to_change = []
+	while (0 <= x < 8) and (0 <= y-i < 8) and board[x,y-i] == enemy_index:
+		to_change.append([x, y-i])
+		i += 1
+	if (0 <= x < 8) and (0 <= y-i < 8) and board[x,y-i] == player:
+		moves.extend(to_change)
+
+	i = 1
+	to_change = []
+	while (0 <= x < 8) and (0 <= y+i < 8) and board[x,y+i] == enemy_index:
+		to_change.append([x, y+i])
+		i += 1
+	if (0 <= x < 8) and (0 <= y+i < 8) and board[x,y+i] == player:
+		moves.extend(to_change)
 
 	return moves
