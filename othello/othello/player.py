@@ -142,7 +142,7 @@ class CPUPlayer:
 			event.set()
 
 		def prune(child):
-			a = self.ab_prune(child, 8, -1000, 1000, done)
+			a = self.ab_prune(child, 7, -1000, 1000, done)
 			print(child.move, a)
 			return a
 
