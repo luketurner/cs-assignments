@@ -4,9 +4,10 @@ import functools
 
 import operator as op
 from itertools import product
-from copy import deepcopy
 from threading import Timer, Event
 import re
+
+import numpy
 
 class Player:
 	def __init__(self, id):
@@ -23,38 +24,6 @@ class Infinity(object):
 class NegativeInfinity(object):
 	def __cmp__(self,a):
 		return -1
-
-class memoized(object):
-	'''Decorator. Caches a function's return value each time it is called.
-	If called later with the same arguments, the cached value is returned
-	(not reevaluated).
-	'''
-	def __init__(self, func):
-		self.func = func
-		self.cache = {}
-
-	def __call__(self, *args):
-		if not isinstance(args, collections.Hashable):
-			# uncacheable. a list, for instance.
-			# better to not cache than blow up.
-			return self.func(*args)
-
-		if args[0:2] in self.cache:
-			return self.cache[args[0:2]]
-
-		else:
-			value = self.func(*args)
-			self.cache[args[0:2]] = value
-			return value
-
-	def __repr__(self):
-	  	'''Return the function's docstring.'''
-	  	return self.func.__doc__
-
-	def __get__(self, obj, objtype):
-	  	'''Support instance methods.'''
-	  	return functools.partial(self.__call__, obj)
-
 		
 class BoardNode(object):
 	
@@ -69,7 +38,7 @@ class BoardNode(object):
 	
 	def next_moves(self):
 		for x,y in product(xrange(8), repeat=2):
-			if self.board[x][y] == 0:
+			if self.board[x,y] == 0:
 				moves = self.get_swaps_from_move(x,y)
 				if len(moves) > 0:
 					moves.append([x,y])
@@ -77,11 +46,12 @@ class BoardNode(object):
 
 	def alter_state(self, moves):
 
-		board = deepcopy(self.board)
+		board = numpy.empty_like(self.board)
+		board[:] = self.board
 
 		# Make changes to internal board
 		for x,y in moves:
-			board[x][y] = self.player
+			board[x,y] = self.player
 
 		return board
 
@@ -160,17 +130,17 @@ class CPUPlayer:
 			return beta
 
 
-	def take_turn(self, board, out):
+	def take_turn(self, board):
 		self.board = board
 
-		root = BoardNode(self.board, [], self.us)
+		root = BoardNode(numpy.array(self.board), [], self.us)
 
 		done = Event()
 		def done_timer(event):
 			event.set()
 
 		def prune(child):
-			a = self.ab_prune(child, 6, NegativeInfinity(), Infinity(), done)
+			a = self.ab_prune(child, 6, -1000, 1000, done)
 			print(child.move, a)
 			return a
 
@@ -179,5 +149,5 @@ class CPUPlayer:
 
 
 		coords = max(root.children(), key=prune).move
-		out.send(coords)
-		out.close()
+		#out.send(coords)
+		#out.close()

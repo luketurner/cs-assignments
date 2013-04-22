@@ -10,5 +10,5 @@ for i in boards:
 		setup="from multiprocessing import Process,Pipe;from othello.player import CPUPlayer;p1,p2=Pipe();b={};p=CPUPlayer({})".format(i, j)
 		print "Board: {}\nPlayer: {}".format(i,j)
 		print "Time: "
-		print timeit.timeit(stmt="a=Process(target=p.take_turn,args=(b,p2));a.start();a.join();", setup=setup, number=1)
+		print timeit.timeit(stmt="p.take_turn(b)", setup=setup, number=1)
 		print '-------------'

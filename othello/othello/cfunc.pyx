@@ -1,3 +1,5 @@
+cimport numpy as np
+
 cdef get_swaps_from_move(board, int x, int y):
 	cint enemy_index = 3 - self.player
 	moves = []
