@@ -132,7 +132,7 @@ class CPUPlayer:
 			return beta
 
 
-	def take_turn(self, board):
+	def take_turn(self, board, out):
 		self.board = board
 
 		root = BoardNode(numpy.array(self.board), [], self.us)
@@ -151,5 +151,5 @@ class CPUPlayer:
 
 
 		coords = max(root.children(), key=prune).move
-		#out.send(coords)
-		#out.close()
+		out.send(coords)
+		out.close()
