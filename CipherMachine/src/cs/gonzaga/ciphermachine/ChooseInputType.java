@@ -37,7 +37,7 @@ public class ChooseInputType extends Activity {
 	}
 	
 	public void onOcrClicked(View v) {
-		Intent intent = new Intent(this, TakePhotoActivity.class);
+		Intent intent = new Intent(this, PhotoAndOCRActivity.class);
 		startActivity(intent);
 	}
 }

@@ -28,6 +28,7 @@ public class TakePhotoActivity extends Activity
 	protected TextView _field;
 	protected String _path;
 	protected boolean _taken;
+	protected Bitmap bitmap;
 	
 	protected static final String PHOTO_TAKEN	= "photo_taken";
 		
@@ -95,58 +96,10 @@ public class TakePhotoActivity extends Activity
         options.inSampleSize = 4;
     	
 //        Bundle extras = intent.getExtras();
-        Bitmap bitmap = (Bitmap) extras.get("data");
+        bitmap = (Bitmap) extras.get("data");
 //    	Bitmap bitmap = BitmapFactory.decodeFile( _path, options );
     	
     	_image.setImageBitmap(bitmap);
-    	
-//    	_field.setVisibility( View.GONE );
-//    	
-//    	ExifInterface exif;
-//		try {
-//			exif = new ExifInterface(_path);
-//		
-//	    	int exifOrientation = exif.getAttributeInt(
-//	    	        ExifInterface.TAG_ORIENTATION,
-//	    	        ExifInterface.ORIENTATION_NORMAL);
-//	
-//	    	int rotate = 0;
-//	
-//	    	switch (exifOrientation) {
-//	    	case ExifInterface.ORIENTATION_ROTATE_90:
-//	    	    rotate = 90;
-//	    	    break;
-//	    	case ExifInterface.ORIENTATION_ROTATE_180:
-//	    	    rotate = 180;
-//	    	    break;
-//	    	case ExifInterface.ORIENTATION_ROTATE_270:
-//	    	    rotate = 270;
-//	    	    break;
-//	    	}
-//	
-//	    	if (rotate != 0) {
-//	    	    int w = bitmap.getWidth();
-//	    	    int h = bitmap.getHeight();
-//	
-//	    	    // Setting pre rotate
-//	    	    Matrix mtx = new Matrix();
-//	    	    mtx.preRotate(rotate);
-//	
-//	    	    // Rotating Bitmap & convert to ARGB_8888, required by tess
-//	    	    bitmap = Bitmap.createBitmap(bitmap, 0, 0, w, h, mtx, false);
-//	    	    bitmap = bitmap.copy(Bitmap.Config.ARGB_8888, true);
-//	    	}
-//		} catch (IOException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
-//		
-//		TessBaseAPI baseApi = new TessBaseAPI();
-//		// DATA_PATH = Path to the storage
-//		// lang for which the language data exists, usually "eng"
-//		baseApi.init(_path, "eng"); baseApi.setImage(bitmap);
-//		String recognizedText = baseApi.getUTF8Text();
-//		baseApi.end();
     }
     
     @Override 
@@ -163,7 +116,64 @@ public class TakePhotoActivity extends Activity
     }
     
 	public void onPerformOcrClicked(View v) {
-		Intent intent = new Intent(this, TakePhotoActivity.class);
-		startActivity(intent);
+//		Intent intent = new Intent(this, TakePhotoActivity.class);
+//		startActivity(intent);
+		
+    	_field.setVisibility( View.GONE );
+    	
+    	ExifInterface exif;
+		try {
+			exif = new ExifInterface(_path);
+		
+	    	int exifOrientation = exif.getAttributeInt(
+	    	        ExifInterface.TAG_ORIENTATION,
+	    	        ExifInterface.ORIENTATION_NORMAL);
+	
+	    	int rotate = 0;
+	
+	    	switch (exifOrientation) {
+	    	case ExifInterface.ORIENTATION_ROTATE_90:
+	    	    rotate = 90;
+	    	    break;
+	    	case ExifInterface.ORIENTATION_ROTATE_180:
+	    	    rotate = 180;
+	    	    break;
+	    	case ExifInterface.ORIENTATION_ROTATE_270:
+	    	    rotate = 270;
+	    	    break;
+	    	}
+	
+	    	if (rotate != 0) {
+	    	    int w = bitmap.getWidth();
+	    	    int h = bitmap.getHeight();
+	
+	    	    // Setting pre rotate
+	    	    Matrix mtx = new Matrix();
+	    	    mtx.preRotate(rotate);
+	
+	    	    // Rotating Bitmap & convert to ARGB_8888, required by tess
+	    	    bitmap = Bitmap.createBitmap(bitmap, 0, 0, w, h, mtx, false);
+	    	    bitmap = bitmap.copy(Bitmap.Config.ARGB_8888, true);
+	    	}
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		String tessDataDirectoryString = Environment.getExternalStorageDirectory() + "/data/";
+		// create a File object for the parent directory
+		File tessDataDirectory = new File(tessDataDirectoryString);
+		// have the object build the directory structure, if needed.
+		tessDataDirectory.mkdirs();
+		// create a File object for the output file
+		File outputFile = new File(tessDataDirectory, "ocr.dat");
+		
+		TessBaseAPI baseApi = new TessBaseAPI();
+		// DATA_PATH = Path to the storage
+		// lang for which the language data exists, usually "eng"
+		baseApi.init(tessDataDirectoryString, "eng"); 
+//		baseApi.setImage(bitmap);
+//		String recognizedText = baseApi.getUTF8Text();
+//		baseApi.end();
 	}
 }
