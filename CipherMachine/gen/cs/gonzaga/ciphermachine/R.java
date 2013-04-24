@@ -25,8 +25,8 @@ public final class R {
     }
     public static final class id {
         public static final int LinearLayout1=0x7f080004;
-        public static final int action_settings=0x7f08000c;
-        public static final int button1=0x7f080000;
+        public static final int action_settings=0x7f080010;
+        public static final int button=0x7f08000e;
         public static final int button2=0x7f080005;
         public static final int button3=0x7f080006;
         public static final int button4=0x7f080007;
@@ -34,8 +34,12 @@ public final class R {
         public static final int buttonFileInput=0x7f080003;
         public static final int buttonInput=0x7f08000a;
         public static final int buttonManualInput=0x7f080002;
+        public static final int buttonOcrInput=0x7f080000;
+        public static final int buttonPerformOcr=0x7f08000f;
         public static final int caesar_activity_shift=0x7f080001;
         public static final int editTextInput=0x7f080009;
+        public static final int field=0x7f08000c;
+        public static final int image=0x7f08000d;
         public static final int outputTextLabel=0x7f08000b;
     }
     public static final class layout {
@@ -44,6 +48,7 @@ public final class R {
         public static final int activity_cipher_selector=0x7f030002;
         public static final int activity_input_text=0x7f030003;
         public static final int activity_output_text=0x7f030004;
+        public static final int activity_take_photo=0x7f030005;
     }
     public static final class menu {
         public static final int caesar_shift=0x7f070000;
@@ -51,6 +56,7 @@ public final class R {
         public static final int cipher_selector=0x7f070002;
         public static final int input_text=0x7f070003;
         public static final int output_text=0x7f070004;
+        public static final int take_photo=0x7f070005;
     }
     public static final class string {
         public static final int action_settings=0x7f050001;
@@ -65,10 +71,13 @@ public final class R {
         public static final int input_cipher_hint=0x7f05000d;
         public static final int input_type_file=0x7f05000e;
         public static final int input_type_manual=0x7f05000f;
+        public static final int ocr=0x7f050012;
+        public static final int perform_ocr=0x7f050014;
         public static final int title_activity_caesar_shift=0x7f050007;
         public static final int title_activity_choose_input_type=0x7f050010;
         public static final int title_activity_cipher_selector=0x7f050006;
         public static final int title_activity_output_text=0x7f050003;
+        public static final int title_activity_take_photo=0x7f050013;
         public static final int title_cipher_detail=0x7f050005;
         public static final int title_cipher_list=0x7f050004;
     }
