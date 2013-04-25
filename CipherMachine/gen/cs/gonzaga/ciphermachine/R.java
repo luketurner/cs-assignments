@@ -25,8 +25,8 @@ public final class R {
     }
     public static final class id {
         public static final int LinearLayout1=0x7f080004;
-        public static final int action_settings=0x7f080010;
-        public static final int button=0x7f08000c;
+        public static final int action_settings=0x7f080011;
+        public static final int button=0x7f08000d;
         public static final int button2=0x7f080005;
         public static final int button3=0x7f080006;
         public static final int button4=0x7f080007;
@@ -35,11 +35,12 @@ public final class R {
         public static final int buttonInput=0x7f08000a;
         public static final int buttonManualInput=0x7f080002;
         public static final int buttonOcrInput=0x7f080000;
-        public static final int buttonPerformOcr=0x7f08000f;
+        public static final int buttonPerformOcr=0x7f080010;
         public static final int caesar_activity_shift=0x7f080001;
         public static final int editTextInput=0x7f080009;
-        public static final int field=0x7f08000d;
-        public static final int image=0x7f08000e;
+        public static final int image=0x7f08000f;
+        public static final int inputOCRButton=0x7f08000c;
+        public static final int noImageView=0x7f08000e;
         public static final int outputTextLabel=0x7f08000b;
     }
     public static final class layout {
@@ -72,8 +73,10 @@ public final class R {
         public static final int hello_world=0x7f050002;
         public static final int input=0x7f050011;
         public static final int input_cipher_hint=0x7f05000d;
+        public static final int input_ocr_string=0x7f050019;
         public static final int input_type_file=0x7f05000e;
         public static final int input_type_manual=0x7f05000f;
+        public static final int no_image=0x7f050018;
         public static final int ocr=0x7f050012;
         public static final int perform_ocr=0x7f050014;
         public static final int text_hint=0x7f050017;

@@ -1,12 +1,10 @@
 package cs.gonzaga.ciphermachine;
 
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
-import java.util.zip.GZIPInputStream;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -23,6 +21,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 
 import com.googlecode.tesseract.android.TessBaseAPI;
 
@@ -31,26 +30,30 @@ public class PhotoAndOCRActivity extends Activity {
 	public static final String DATA_PATH = Environment
 			.getExternalStorageDirectory().toString() + "/SimpleAndroidOCR/";
 
-	// You should have the trained data file in assets folder
-	// You can get them at:
-	// http://code.google.com/p/tesseract-ocr/downloads/list
+	// Trained language data from http://code.google.com/p/tesseract-ocr/downloads/list
 	public static final String lang = "eng";
 
 	private static final String TAG = "PhotoAndOCRActivity.java";
 
 	protected Button _button;
-	// protected ImageView _image;
+	protected ImageView _image;
 	protected EditText _field;
 	protected String _path;
 	protected boolean _taken;
+	protected String ocrText;
 
 	protected static final String PHOTO_TAKEN = "photo_taken";
+	
+//	EditText editTextInput;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		String[] paths = new String[] { DATA_PATH, DATA_PATH + "tessdata/" };
 
+//        editTextInput = (EditText)findViewById(R.id.editTextInput);
+//        editTextInput.setOnEditorActionListener(new DoneOnEditorActionListener());
+		
 		for (String path : paths) {
 			File dir = new File(path);
 			if (!dir.exists()) {
@@ -64,10 +67,6 @@ public class PhotoAndOCRActivity extends Activity {
 
 		}
 
-		// lang.traineddata file with the app (in assets folder)
-		// You can get them at:
-		// http://code.google.com/p/tesseract-ocr/downloads/list
-		// This area needs work and optimization
 		if (!(new File(DATA_PATH + "tessdata/" + lang + ".traineddata")).exists()) {
 			try {
 
@@ -98,8 +97,8 @@ public class PhotoAndOCRActivity extends Activity {
 
 		setContentView(R.layout.activity_photo_and_ocr);
 
-		// _image = (ImageView) findViewById(R.id.image);
-		_field = (EditText) findViewById(R.id.field);
+		_image = (ImageView) findViewById(R.id.image);
+		_field = (EditText) findViewById(R.id.noImageView);
 		_button = (Button) findViewById(R.id.button);
 		_button.setOnClickListener(new ButtonClickHandler());
 
@@ -204,7 +203,7 @@ public class PhotoAndOCRActivity extends Activity {
 			Log.e(TAG, "Couldn't correct orientation: " + e.toString());
 		}
 
-		// _image.setImageBitmap( bitmap );
+		 _image.setImageBitmap( bitmap );
 
 		Log.v(TAG, "Before baseApi");
 
@@ -217,7 +216,7 @@ public class PhotoAndOCRActivity extends Activity {
 
 		baseApi.end();
 
-		// You now have the text in recognizedText var, you can do anything with it.
+		// Recognized text in recognizedText var.
 		// We will display a stripped out trimmed alpha-numeric version of it (if lang is eng)
 		// so that garbage doesn't make it to the display.
 
@@ -233,7 +232,17 @@ public class PhotoAndOCRActivity extends Activity {
 			_field.setText(_field.getText().toString().length() == 0 ? recognizedText : _field.getText() + " " + recognizedText);
 			_field.setSelection(_field.getText().toString().length());
 		}
+		
+		ocrText = recognizedText.trim();
+		ocrText = _field.getText().toString(); 
 
 		// Cycle done.
+	}
+	
+	public void onInputOCRClick(View v) {
+    	String inputText = _field.getText().toString(); 	
+        Intent intent = new Intent(this, CipherSelector.class);
+        intent.putExtra("inputText", inputText);
+        this.startActivity(intent);
 	}
 }

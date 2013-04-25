@@ -40,7 +40,7 @@ public class TakePhotoActivity extends Activity
         setContentView(R.layout.activity_take_photo);
        
         _image = ( ImageView ) findViewById( R.id.image );
-        _field = ( TextView ) findViewById( R.id.field );
+        _field = ( TextView ) findViewById( R.id.noImageView );
         _button = ( Button ) findViewById( R.id.button );
         _button.setOnClickListener( new ButtonClickHandler() );
         

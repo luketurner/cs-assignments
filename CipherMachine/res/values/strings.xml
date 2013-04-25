@@ -23,7 +23,9 @@
     <string name="title_activity_take_photo">TakePhotoActivity</string>
     <string name="perform_ocr">Perform OCR</string>
     <string name="title_activity_photo_and_ocr">PhotoAndOCRActivity</string>
-    <string name="button_text">OCR Button</string>
+    <string name="button_text">Take OCR Photo</string>
     <string name="text_hint">Text Hints</string>
+    <string name="no_image">No Image</string>
+    <string name="input_ocr_string">Input OCR String</string>
 
 </resources>
