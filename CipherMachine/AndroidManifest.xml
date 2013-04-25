@@ -42,6 +42,22 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name="cs.gonzaga.ciphermachine.ciphers.ShiftedCaesarsBoxActivity"
+            android:label="@string/title_activity_shifted_caesars_box"
+            android:parentActivityName="cs.gonzaga.ciphermachine.CipherSelector" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="cs.gonzaga.ciphermachine.CipherSelector" />
+        </activity>
+        <activity
+            android:name="cs.gonzaga.ciphermachine.ciphers.RailFenceActivity"
+            android:label="@string/title_activity_rail_fence"
+            android:parentActivityName="cs.gonzaga.ciphermachine.CipherSelector" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="cs.gonzaga.ciphermachine.CipherSelector" />
+        </activity>
     </application>
 
 </manifest>

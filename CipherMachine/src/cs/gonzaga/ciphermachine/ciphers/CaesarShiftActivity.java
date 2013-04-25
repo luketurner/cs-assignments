@@ -9,8 +9,9 @@ import android.content.Intent;
 import android.view.Menu;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.TextView;
 
-public class CaesarShiftActivity extends Activity {
+public class CaesarShiftActivity extends AbstractCipherActivity {
 	
 	private String inputText = "";
 
@@ -18,7 +19,6 @@ public class CaesarShiftActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_caesar_shift);
-		inputText = getIntent().getExtras().getString("inputText");
 	}
 
 	@Override
@@ -28,17 +28,15 @@ public class CaesarShiftActivity extends Activity {
 		return true;
 	}
 	
-	public void onButtonClick(View v) {
-		String actionType = (String) v.getTag();
-		String shift = ((EditText) findViewById(R.id.caesar_activity_shift)).getText().toString();
-		Intent intent = new Intent();
-		String outputText = "";
-		if (actionType.equals("Encrypt")) {
-			intent.setClass(this, cs.gonzaga.ciphermachine.OutputText.class);
-			outputText = CaesarShift.encrypt(inputText, Integer.parseInt(shift));
-		}
-		intent.putExtra("outputText", outputText);
-		this.startActivity(intent);
+	public int getKey() {
+		return Integer.parseInt(((TextView) findViewById(R.id.caesar_activity_shift)).getText().toString());
+	}
+	
+	public String encipherString() {
+		return CaesarShift.encrypt(getInputString(), getKey());
+	}
+	public String decipherString() {
+		return CaesarShift.decrypt(getInputString(), getKey());
 	}
 
 }

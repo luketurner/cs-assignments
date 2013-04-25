@@ -8,24 +8,59 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".CaesarShiftActivity" >
 
-    <Button
-        android:id="@+id/button1"
+    <TextView
+        android:id="@+id/textView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/caesar_activity_shift"
+        android:layout_alignBottom="@+id/caesar_activity_shift"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true"
-        android:layout_centerVertical="true"
-        android:onClick="onButtonClick"
-        android:tag="Encrypt"
+        android:text="Shift Amount"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <Button
+        android:id="@+id/caesar_box_activity_encrypt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:onClick="onEncipherCall"
         android:text="Encrypt" />
+
+    <Button
+        android:id="@+id/cipher_select_caesar_box"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:onClick="onDecipherCall"
+        android:text="Decrypt" />
+
+    <Button
+        android:id="@+id/caesar_shift_activity_crack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_toLeftOf="@+id/cipher_select_caesar_box"
+        android:layout_toRightOf="@+id/caesar_box_activity_encrypt"
+        android:text="Crack" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:text="Caesar Shift"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <EditText
         android:id="@+id/caesar_activity_shift"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/button1"
-        android:layout_centerHorizontal="true"
-        android:ems="10"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/textView2"
+        android:ems="2"
         android:inputType="numberSigned"
         android:text="2"
         android:textAlignment="center" >

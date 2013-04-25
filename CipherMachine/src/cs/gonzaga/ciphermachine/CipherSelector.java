@@ -51,6 +51,12 @@ public class CipherSelector extends Activity {
 		if (cipherName.equals(getResources().getString(R.string.cipher_select_caesar))) {
 			intent.setClass(this, cs.gonzaga.ciphermachine.ciphers.CaesarShiftActivity.class);
 		}
+		if (cipherName.equals(getResources().getString(R.string.cipher_select_caesar_box))) {
+			intent.setClass(this, cs.gonzaga.ciphermachine.ciphers.ShiftedCaesarsBoxActivity.class);
+		}
+		if (cipherName.equals(getResources().getString(R.string.cipher_select_rail_fence))) {
+			intent.setClass(this, cs.gonzaga.ciphermachine.ciphers.RailFenceActivity.class);
+		}
 		this.startActivity(intent);
 	}
 

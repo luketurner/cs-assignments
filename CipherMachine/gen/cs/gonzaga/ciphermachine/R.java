@@ -24,20 +24,32 @@ public final class R {
         public static final int ic_launcher=0x7f020000;
     }
     public static final class id {
-        public static final int LinearLayout1=0x7f080004;
-        public static final int action_settings=0x7f08000d;
-        public static final int button1=0x7f080000;
-        public static final int buttonFileInput=0x7f080003;
-        public static final int buttonInput=0x7f08000b;
-        public static final int buttonManualInput=0x7f080002;
+        public static final int LinearLayout1=0x7f080008;
+        public static final int RelativeLayout1=0x7f080011;
+        public static final int action_settings=0x7f080019;
+        public static final int buttonFileInput=0x7f080007;
+        public static final int buttonInput=0x7f08000f;
+        public static final int buttonManualInput=0x7f080006;
         public static final int caesar_activity_shift=0x7f080001;
-        public static final int cipher_select_caesar=0x7f080005;
-        public static final int cipher_select_enigma=0x7f080007;
-        public static final int cipher_select_playfair=0x7f080008;
-        public static final int cipher_select_route=0x7f080009;
-        public static final int cipher_select_vignere=0x7f080006;
-        public static final int editTextInput=0x7f08000a;
-        public static final int outputTextLabel=0x7f08000c;
+        public static final int caesar_box_activity_encrypt=0x7f080002;
+        public static final int caesar_box_activity_shift=0x7f080018;
+        public static final int caesar_shift_activity_crack=0x7f080004;
+        public static final int cipher_select_caesar=0x7f080009;
+        public static final int cipher_select_caesar_box=0x7f080003;
+        public static final int cipher_select_enigma=0x7f08000b;
+        public static final int cipher_select_playfair=0x7f08000c;
+        public static final int cipher_select_route=0x7f08000a;
+        public static final int cipher_select_vignere=0x7f08000d;
+        public static final int editTextInput=0x7f08000e;
+        public static final int linearLayout1=0x7f080012;
+        public static final int outputTextLabel=0x7f080010;
+        public static final int rail_cipher_activity_char=0x7f080013;
+        public static final int rail_cipher_activity_decrypt_button=0x7f080015;
+        public static final int rail_cipher_activity_encrypt_button=0x7f080016;
+        public static final int rail_cipher_activity_shift=0x7f080014;
+        public static final int textView1=0x7f080000;
+        public static final int textView2=0x7f080005;
+        public static final int textView3=0x7f080017;
     }
     public static final class layout {
         public static final int activity_caesar_shift=0x7f030000;
@@ -45,6 +57,8 @@ public final class R {
         public static final int activity_cipher_selector=0x7f030002;
         public static final int activity_input_text=0x7f030003;
         public static final int activity_output_text=0x7f030004;
+        public static final int activity_rail_fence=0x7f030005;
+        public static final int activity_shifted_caesars_box=0x7f030006;
     }
     public static final class menu {
         public static final int caesar_shift=0x7f070000;
@@ -52,13 +66,17 @@ public final class R {
         public static final int cipher_selector=0x7f070002;
         public static final int input_text=0x7f070003;
         public static final int output_text=0x7f070004;
+        public static final int rail_fence=0x7f070005;
+        public static final int shifted_caesars_box=0x7f070006;
     }
     public static final class string {
         public static final int action_settings=0x7f050001;
         public static final int app_name=0x7f050000;
         public static final int cipher_select_caesar=0x7f050008;
+        public static final int cipher_select_caesar_box=0x7f050013;
         public static final int cipher_select_enigma=0x7f05000a;
         public static final int cipher_select_playfair=0x7f05000b;
+        public static final int cipher_select_rail_fence=0x7f050015;
         public static final int cipher_select_route=0x7f05000c;
         public static final int cipher_select_vignere=0x7f050009;
         public static final int hello_world=0x7f050002;
@@ -70,6 +88,8 @@ public final class R {
         public static final int title_activity_choose_input_type=0x7f050010;
         public static final int title_activity_cipher_selector=0x7f050006;
         public static final int title_activity_output_text=0x7f050003;
+        public static final int title_activity_rail_fence=0x7f050014;
+        public static final int title_activity_shifted_caesars_box=0x7f050012;
         public static final int title_cipher_detail=0x7f050005;
         public static final int title_cipher_list=0x7f050004;
     }
