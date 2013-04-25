@@ -58,9 +58,15 @@
         android:id="@+id/caesar_activity_shift"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+<<<<<<< HEAD
         android:layout_alignParentRight="true"
         android:layout_below="@+id/textView2"
         android:ems="2"
+=======
+        android:layout_above="@+id/buttonOcrInput"
+        android:layout_centerHorizontal="true"
+        android:ems="10"
+>>>>>>> gsparx-master
         android:inputType="numberSigned"
         android:text="2"
         android:textAlignment="center" >

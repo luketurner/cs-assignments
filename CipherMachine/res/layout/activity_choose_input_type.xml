@@ -24,4 +24,12 @@
         android:text="@string/input_type_file" > <!-- android:textAlignment="center" /> -->
 
     </Button>
+
+    <Button
+        android:id="@+id/buttonOcrInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/ocr"
+        android:onClick="onOcrClicked" />
+
 </LinearLayout>

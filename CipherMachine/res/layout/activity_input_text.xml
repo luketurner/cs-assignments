@@ -16,10 +16,9 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="71dp"
         android:ems="10"
-        android:hint="@string/input_cipher_hint" >
-
-        <requestFocus />
-    </EditText>
+        android:hint="@string/input_cipher_hint"
+        android:imeOptions="actionDone"
+        android:singleLine="true" />
 
     <Button
         android:id="@+id/buttonInput"
