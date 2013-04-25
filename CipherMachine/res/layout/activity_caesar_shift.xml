@@ -9,7 +9,7 @@
     tools:context=".CaesarShiftActivity" >
 
     <Button
-        android:id="@+id/button1"
+        android:id="@+id/buttonOcrInput"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
@@ -23,7 +23,7 @@
         android:id="@+id/caesar_activity_shift"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/button1"
+        android:layout_above="@+id/buttonOcrInput"
         android:layout_centerHorizontal="true"
         android:ems="10"
         android:inputType="numberSigned"

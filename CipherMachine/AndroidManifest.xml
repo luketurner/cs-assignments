@@ -42,6 +42,25 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name="cs.gonzaga.ciphermachine.TakePhotoActivity"
+            android:label="@string/title_activity_take_photo" >
+        </activity>
+        <activity
+            android:name="cs.gonzaga.ciphermachine.PhotoAndOCRActivity"
+            android:label="@string/title_activity_photo_and_ocr" >
+        </activity>
     </application>
+    
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.FLASHLIGHT" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.camera.autofocus"
+        android:required="false" />
 
 </manifest>

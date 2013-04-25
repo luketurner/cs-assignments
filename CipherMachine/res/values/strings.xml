@@ -19,5 +19,13 @@
     <string name="input_type_manual">Manual</string>
     <string name="title_activity_choose_input_type">Choose Input Type</string>
     <string name="input">Enter Text</string>
+    <string name="ocr">OCR</string>
+    <string name="title_activity_take_photo">TakePhotoActivity</string>
+    <string name="perform_ocr">Perform OCR</string>
+    <string name="title_activity_photo_and_ocr">PhotoAndOCRActivity</string>
+    <string name="button_text">Take OCR Photo</string>
+    <string name="text_hint">Text Hints</string>
+    <string name="no_image">No Image</string>
+    <string name="input_ocr_string">Input OCR String</string>
 
 </resources>
