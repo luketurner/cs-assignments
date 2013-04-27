@@ -57,6 +57,7 @@
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="cs.gonzaga.ciphermachine.CipherSelector" />
+        </activity>
         <activity
             android:name="cs.gonzaga.ciphermachine.TakePhotoActivity"
             android:label="@string/title_activity_take_photo" >

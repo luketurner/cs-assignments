@@ -23,7 +23,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 
-import com.googlecode.tesseract.android.TessBaseAPI;
+//import com.googlecode.tesseract.android.TessBaseAPI;
 
 public class PhotoAndOCRActivity extends Activity {
 	public static final String PACKAGE_NAME = "com.datumdroid.android.ocr.simple";
@@ -207,14 +207,14 @@ public class PhotoAndOCRActivity extends Activity {
 
 		Log.v(TAG, "Before baseApi");
 
-		TessBaseAPI baseApi = new TessBaseAPI();
-		baseApi.setDebug(true);
-		baseApi.init(DATA_PATH, lang);
-		baseApi.setImage(bitmap);
+		//TessBaseAPI baseApi = new TessBaseAPI();
+		//baseApi.setDebug(true);
+		//baseApi.init(DATA_PATH, lang);
+		//baseApi.setImage(bitmap);
 
-		String recognizedText = baseApi.getUTF8Text();
+		String recognizedText = "";//baseApi.getUTF8Text();
 
-		baseApi.end();
+		//baseApi.end();
 
 		// Recognized text in recognizedText var.
 		// We will display a stripped out trimmed alpha-numeric version of it (if lang is eng)

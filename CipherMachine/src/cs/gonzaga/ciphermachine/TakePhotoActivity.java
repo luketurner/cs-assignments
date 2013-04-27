@@ -3,7 +3,7 @@ package cs.gonzaga.ciphermachine;
 import java.io.File;
 import java.io.IOException;
 
-import com.googlecode.tesseract.android.TessBaseAPI;
+//import com.googlecode.tesseract.android.TessBaseAPI;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -168,10 +168,10 @@ public class TakePhotoActivity extends Activity
 		// create a File object for the output file
 		File outputFile = new File(tessDataDirectory, "ocr.dat");
 		
-		TessBaseAPI baseApi = new TessBaseAPI();
+		//TessBaseAPI baseApi = new TessBaseAPI();
 		// DATA_PATH = Path to the storage
 		// lang for which the language data exists, usually "eng"
-		baseApi.init(tessDataDirectoryString, "eng"); 
+		//baseApi.init(tessDataDirectoryString, "eng"); 
 //		baseApi.setImage(bitmap);
 //		String recognizedText = baseApi.getUTF8Text();
 //		baseApi.end();
