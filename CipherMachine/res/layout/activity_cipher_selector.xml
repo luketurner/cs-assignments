@@ -11,7 +11,7 @@
     tools:context=".CipherSelector" >
 
     <TextView
-        android:id="@+id/textView1"
+        android:id="@+id/vigenere_activity_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Select A Cipher"
@@ -43,6 +43,22 @@
         android:text="@string/cipher_select_rail_fence" />
 
     <Button
+        android:id="@+id/cipher_select_vigenere"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onCipherSelected"
+        android:tag="@string/cipher_select_vigenere"
+        android:text="@string/cipher_select_vigenere" />
+
+    <Button
+        android:id="@+id/cipher_select_adfgvx"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onCipherSelected"
+        android:tag="@string/cipher_select_adfgvx"
+        android:text="@string/cipher_select_adfgvx" />
+
+    <Button
         android:id="@+id/cipher_select_enigma"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -57,13 +73,5 @@
         android:onClick="onCipherSelected"
         android:tag="@string/cipher_select_playfair"
         android:text="@string/cipher_select_playfair" />
-
-    <Button
-        android:id="@+id/cipher_select_vignere"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:onClick="onCipherSelected"
-        android:tag="@string/cipher_select_vignere"
-        android:text="@string/cipher_select_vignere" />
 
 </LinearLayout>

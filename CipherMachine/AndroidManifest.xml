@@ -66,12 +66,20 @@
             android:name="cs.gonzaga.ciphermachine.PhotoAndOCRActivity"
             android:label="@string/title_activity_photo_and_ocr" >
         </activity>
+        <activity
+            android:name="cs.gonzaga.ciphermachine.ciphers.VigenereActivity"
+            android:label="@string/title_activity_vigenere" >
+        </activity>
+        <activity
+            android:name="cs.gonzaga.ciphermachine.ciphers.ADFGVXActivity"
+            android:label="@string/title_activity_adfgvx" >
+        </activity>
     </application>
-    
+
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.FLASHLIGHT" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    
+
     <uses-feature
         android:name="android.hardware.camera"
         android:required="false" />

@@ -31,5 +31,10 @@
     <string name="text_hint">Text Hints</string>
     <string name="no_image">No Image</string>
     <string name="input_ocr_string">Input OCR String</string>
+    <string name="cipher_select_adfvgx">ADFVGX</string>
+    <string name="cipher_select_vigenere">Vigenere</string>
+    <string name="cipher_select_adfgvx">ADFGVX</string>
+    <string name="title_activity_vigenere">VigenereActivity</string>
+    <string name="title_activity_adfgvx">ADFGVXActivity</string>
 
 </resources>
