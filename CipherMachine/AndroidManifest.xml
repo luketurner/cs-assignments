@@ -74,6 +74,18 @@
             android:name="cs.gonzaga.ciphermachine.ciphers.ADFGVXActivity"
             android:label="@string/title_activity_adfgvx" >
         </activity>
+        <activity
+            android:name="cs.gonzaga.ciphermachine.ciphers.EnigmaActivity"
+            android:label="@string/title_activity_enigma" >
+        </activity>
+        <activity
+            android:name="cs.gonzaga.ciphermachine.ciphers.RouteActivity"
+            android:label="@string/title_activity_route" >
+        </activity>
+        <activity
+            android:name="cs.gonzaga.ciphermachine.ciphers.PlayfairActivity"
+            android:label="@string/title_activity_playfair" >
+        </activity>
     </application>
 
     <uses-permission android:name="android.permission.CAMERA" />

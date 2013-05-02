@@ -63,6 +63,10 @@ public class CipherSelector extends Activity {
 		if (cipherName.equals(getResources().getString(R.string.cipher_select_adfgvx))) {
 			intent.setClass(this, cs.gonzaga.ciphermachine.ciphers.ADFGVXActivity.class);
 		}
+		if (cipherName.equals(getResources().getString(R.string.cipher_select_enigma))) {
+			intent.setClass(this, cs.gonzaga.ciphermachine.ciphers.EnigmaActivity.class);
+			System.out.println("hi");
+		}
 		this.startActivity(intent);
 	}
 
