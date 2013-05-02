@@ -65,7 +65,12 @@ public class CipherSelector extends Activity {
 		}
 		if (cipherName.equals(getResources().getString(R.string.cipher_select_enigma))) {
 			intent.setClass(this, cs.gonzaga.ciphermachine.ciphers.EnigmaActivity.class);
-			System.out.println("hi");
+		}
+		if (cipherName.equals(getResources().getString(R.string.cipher_select_route))) {
+			intent.setClass(this, cs.gonzaga.ciphermachine.ciphers.RouteActivity.class);
+		}
+		if (cipherName.equals(getResources().getString(R.string.cipher_select_playfair))) {
+			intent.setClass(this, cs.gonzaga.ciphermachine.ciphers.PlayfairActivity.class);
 		}
 		this.startActivity(intent);
 	}

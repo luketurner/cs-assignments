@@ -36,15 +36,6 @@
         android:onClick="onDecipherCall"
         android:text="Decrypt" />
 
-    <Button
-        android:id="@+id/caesar_shift_activity_crack"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_toLeftOf="@+id/cipher_select_caesar_box"
-        android:layout_toRightOf="@+id/caesar_box_activity_encrypt"
-        android:text="Crack" />
-
     <TextView
         android:id="@+id/vigenere_activity_keyword_label"
         android:layout_width="wrap_content"

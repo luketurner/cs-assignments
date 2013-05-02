@@ -35,7 +35,7 @@
         android:tag="@string/cipher_select_caesar_box" />
 
     <Button
-        android:id="@+id/cipher_select_route"
+        android:id="@+id/cipher_select_rail_fence"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:onClick="onCipherSelected"
@@ -73,5 +73,13 @@
         android:onClick="onCipherSelected"
         android:tag="@string/cipher_select_playfair"
         android:text="@string/cipher_select_playfair" />
+    
+    <Button
+        android:id="@+id/cipher_select_route"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onCipherSelected"
+        android:tag="@string/cipher_select_route"
+        android:text="@string/cipher_select_route" />
 
 </LinearLayout>
