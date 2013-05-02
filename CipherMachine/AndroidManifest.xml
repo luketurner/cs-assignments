@@ -86,6 +86,22 @@
             android:name="cs.gonzaga.ciphermachine.ciphers.PlayfairActivity"
             android:label="@string/title_activity_playfair" >
         </activity>
+        <activity
+            android:name="cs.gonzaga.ciphermachine.ReadFile"
+            android:label="@string/title_activity_read_file"
+            android:name="com.ipaulpro.afilechooser.FileChooserActivity"
+            android:icon="@drawable/ic_chooser"
+            android:label="@string/choose_file" >
+            <intent-filter>
+                <action android:name="android.intent.action.GET_CONTENT" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.OPENABLE" />
+
+                <data android:mimeType="*/*" />
+            </intent-filter>
+        </activity>
+
     </application>
 
     <uses-permission android:name="android.permission.CAMERA" />

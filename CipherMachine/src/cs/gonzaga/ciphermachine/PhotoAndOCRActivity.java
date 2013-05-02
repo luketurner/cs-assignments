@@ -6,6 +6,8 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 
+import com.googlecode.tesseract.android.TessBaseAPI;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.content.res.AssetManager;

@@ -9,7 +9,7 @@
     tools:context=".CaesarShiftActivity" >
 
     <TextView
-        android:id="@+id/vigenere_activity_title"
+        android:id="@+id/caesar_activity_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/caesar_activity_shift"
@@ -37,7 +37,7 @@
         android:text="Decrypt" />
 
     <TextView
-        android:id="@+id/vigenere_activity_keyword_label"
+        android:id="@+id/caesar_activity_keyword_label"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
@@ -50,7 +50,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
-        android:layout_below="@+id/vigenere_activity_keyword_label"
+        android:layout_below="@+id/caesar_activity_keyword_label"
         android:ems="2"
         android:inputType="numberSigned"
         android:text="2"

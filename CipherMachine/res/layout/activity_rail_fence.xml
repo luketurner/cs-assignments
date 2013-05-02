@@ -40,7 +40,8 @@
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <TextView
-        android:id="@+id/vigenere_activity_keyword_label"
+<<<<<<< HEAD
+        android:id="@+id/rail_fence_activity_keyword_label"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/rail_cipher_activity_shift"

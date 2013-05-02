@@ -22,13 +22,19 @@ public final class R {
          screen margins) for sw720dp devices (e.g. 10" tablets) in landscape here.
     
          */
-        public static final int activity_horizontal_margin=0x7f040000;
-        public static final int activity_vertical_margin=0x7f040001;
+        public static final int activity_horizontal_margin=0x7f050002;
+        public static final int activity_vertical_margin=0x7f050003;
+        public static final int list_item_padding=0x7f050001;
+        public static final int list_padding=0x7f050000;
     }
     public static final class drawable {
-        public static final int encrypt=0x7f020000;
-        public static final int forward=0x7f020001;
-        public static final int ic_launcher=0x7f020002;
+        public static final int background=0x7f020000;
+        public static final int encrypt=0x7f020001;
+        public static final int forward=0x7f020002;
+        public static final int ic_chooser=0x7f020003;
+        public static final int ic_file=0x7f020004;
+        public static final int ic_folder=0x7f020005;
+        public static final int ic_launcher=0x7f020006;
     }
     public static final class id {
         public static final int LinearLayout1=0x7f09000d;
@@ -176,6 +182,120 @@ public final class R {
         public static final int title_activity_vigenere=0x7f050021;
         public static final int title_cipher_detail=0x7f050005;
         public static final int title_cipher_list=0x7f050004;
+=======
+        public static final int LinearLayout1=0x7f09000b;
+        public static final int RelativeLayout1=0x7f09001c;
+        public static final int action_settings=0x7f09002a;
+        public static final int button=0x7f090019;
+        public static final int buttonChooseCipher=0x7f090023;
+        public static final int buttonFileInput=0x7f090008;
+        public static final int buttonInput=0x7f090011;
+        public static final int buttonLoadFile=0x7f090024;
+        public static final int buttonManualInput=0x7f090006;
+        public static final int buttonOcrInput=0x7f09000a;
+        public static final int buttonPerformOcr=0x7f090026;
+        public static final int buttonSendEmail=0x7f090016;
+        public static final int buttonSendText=0x7f090015;
+        public static final int buttonSendTweet=0x7f090017;
+        public static final int caesar_activity_shift=0x7f090001;
+        public static final int caesar_box_activity_encrypt=0x7f090002;
+        public static final int caesar_box_activity_shift=0x7f090025;
+        public static final int caesar_shift_activity_crack=0x7f090004;
+        public static final int cipher_select_caesar=0x7f09000c;
+        public static final int cipher_select_caesar_box=0x7f090003;
+        public static final int cipher_select_enigma=0x7f09000e;
+        public static final int cipher_select_playfair=0x7f09000f;
+        public static final int cipher_select_route=0x7f09000d;
+        public static final int cipher_select_vignere=0x7f090010;
+        public static final int editTextInput=0x7f090013;
+        public static final int explorer_fragment=0x7f090027;
+        public static final int file_icon=0x7f090028;
+        public static final int file_name=0x7f090029;
+        public static final int image=0x7f09001b;
+        public static final int imageBlank=0x7f090012;
+        public static final int imageView1=0x7f090007;
+        public static final int imageView2=0x7f090009;
+        public static final int inputOCRButton=0x7f090018;
+        public static final int linearLayout1=0x7f09001d;
+        public static final int noImageView=0x7f09001a;
+        public static final int outputTextLabel=0x7f090014;
+        public static final int rail_cipher_activity_char=0x7f09001e;
+        public static final int rail_cipher_activity_decrypt_button=0x7f090020;
+        public static final int rail_cipher_activity_encrypt_button=0x7f090021;
+        public static final int rail_cipher_activity_shift=0x7f09001f;
+        public static final int textView1=0x7f090000;
+        public static final int textView3=0x7f090022;
+        public static final int viewFileInputView=0x7f090005;
+    }
+    public static final class layout {
+        public static final int activity_caesar_shift=0x7f030000;
+        public static final int activity_choose_input_type=0x7f030001;
+        public static final int activity_cipher_selector=0x7f030002;
+        public static final int activity_input_text=0x7f030003;
+        public static final int activity_output_text=0x7f030004;
+        public static final int activity_photo_and_ocr=0x7f030005;
+        public static final int activity_rail_fence=0x7f030006;
+        public static final int activity_read_file=0x7f030007;
+        public static final int activity_shifted_caesars_box=0x7f030008;
+        public static final int activity_take_photo=0x7f030009;
+        public static final int chooser=0x7f03000a;
+        public static final int file=0x7f03000b;
+    }
+    public static final class menu {
+        public static final int caesar_shift=0x7f080000;
+        public static final int choose_input_type=0x7f080001;
+        public static final int cipher_selector=0x7f080002;
+        public static final int input_text=0x7f080003;
+        public static final int output_text=0x7f080004;
+        public static final int photo_and_ocr=0x7f080005;
+        public static final int rail_fence=0x7f080006;
+        public static final int read_file=0x7f080007;
+        public static final int shifted_caesars_box=0x7f080008;
+        public static final int take_photo=0x7f080009;
+    }
+    public static final class string {
+        public static final int action_settings=0x7f060005;
+        public static final int app_name=0x7f060004;
+        public static final int button_text=0x7f06001e;
+        public static final int choose_cipher=0x7f060029;
+        public static final int choose_file=0x7f060002;
+        public static final int cipher_select_caesar=0x7f06000c;
+        public static final int cipher_select_caesar_box=0x7f060017;
+        public static final int cipher_select_enigma=0x7f06000e;
+        public static final int cipher_select_playfair=0x7f06000f;
+        public static final int cipher_select_rail_fence=0x7f060019;
+        public static final int cipher_select_route=0x7f060010;
+        public static final int cipher_select_vignere=0x7f06000d;
+        public static final int email=0x7f060023;
+        public static final int empty_directory=0x7f060000;
+        public static final int error_selecting_file=0x7f060003;
+        public static final int facebook=0x7f060025;
+        public static final int hello_world=0x7f060006;
+        public static final int input=0x7f060015;
+        public static final int input_cipher_hint=0x7f060011;
+        public static final int input_ocr_string=0x7f060021;
+        public static final int input_type_file=0x7f060012;
+        public static final int input_type_manual=0x7f060013;
+        public static final int load_file=0x7f060027;
+        public static final int no_file_chosen=0x7f060028;
+        public static final int no_image=0x7f060020;
+        public static final int ocr=0x7f06001a;
+        public static final int perform_ocr=0x7f06001c;
+        public static final int sms=0x7f060022;
+        public static final int storage_removed=0x7f060001;
+        public static final int text_hint=0x7f06001f;
+        public static final int title_activity_caesar_shift=0x7f06000b;
+        public static final int title_activity_choose_input_type=0x7f060014;
+        public static final int title_activity_cipher_selector=0x7f06000a;
+        public static final int title_activity_output_text=0x7f060007;
+        public static final int title_activity_photo_and_ocr=0x7f06001d;
+        public static final int title_activity_rail_fence=0x7f060018;
+        public static final int title_activity_read_file=0x7f060026;
+        public static final int title_activity_shifted_caesars_box=0x7f060016;
+        public static final int title_activity_take_photo=0x7f06001b;
+        public static final int title_cipher_detail=0x7f060009;
+        public static final int title_cipher_list=0x7f060008;
+        public static final int tweet=0x7f060024;
     }
     public static final class style {
         /** 
@@ -199,10 +319,15 @@ public final class R {
     
  API 14 theme customizations can go here. 
          */
-        public static final int AppBaseTheme=0x7f070000;
+        public static final int AppBaseTheme=0x7f070002;
         /**  Application theme. 
  All customizations that are NOT specific to a particular API-level can go here. 
          */
-        public static final int AppTheme=0x7f070001;
+        public static final int AppTheme=0x7f070003;
+        public static final int fileChooserIcon=0x7f070001;
+        public static final int fileChooserName=0x7f070000;
+    }
+    public static final class xml {
+        public static final int mimetypes=0x7f040000;
     }
 }

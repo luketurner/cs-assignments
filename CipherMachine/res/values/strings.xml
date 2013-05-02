@@ -18,7 +18,7 @@
     <string name="input_type_file">File</string>
     <string name="input_type_manual">Manual</string>
     <string name="title_activity_choose_input_type">Choose Input Type</string>
-    <string name="input">Enter Text</string>
+    <string name="input">Choose Cipher</string>
     <string name="title_activity_shifted_caesars_box">ShiftedCaesarsBoxActivity</string>
     <string name="cipher_select_caesar_box">Shifted Caesar\'s Box</string>
     <string name="title_activity_rail_fence">RailFenceActivity</string>
@@ -80,5 +80,13 @@
 
     <string name="title_activity_route">RouteActivity</string>
     <string name="title_activity_playfair">PlayfairActivity</string>
+    <string name="sms">SMS</string>
+    <string name="email">Email</string>
+    <string name="tweet">Tweet</string>
+    <string name="facebook">Facebook</string>
+    <string name="title_activity_read_file">ReadFile</string>
+    <string name="load_file">Load File</string>
+    <string name="no_file_chosen">No File Chosen</string>
+    <string name="choose_cipher">Choose Cipher</string>
 
 </resources>
