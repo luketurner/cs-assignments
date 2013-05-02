@@ -13,28 +13,30 @@
     <TextView
         android:id="@+id/outputTextLabel"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="0.83"
+        android:gravity="center_horizontal"
         android:text="@string/hello_world" />
 
     <Button
         android:id="@+id/buttonSendText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/sms"
-        android:onClick="onTextInputClick" />
+        android:onClick="onTextInputClick"
+        android:text="@string/sms" />
 
     <Button
         android:id="@+id/buttonSendEmail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/email" 
-    	android:onClick="onEmailInputClick" />
+        android:onClick="onEmailInputClick"
+        android:text="@string/email" />
 
     <Button
         android:id="@+id/buttonSendTweet"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/tweet"
-        android:onClick="onTweetInputClick" />
+        android:onClick="onTweetInputClick"
+        android:text="@string/tweet" />
 
 </LinearLayout>

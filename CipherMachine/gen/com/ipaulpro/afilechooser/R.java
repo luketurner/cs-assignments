@@ -8,9 +8,9 @@ package com.ipaulpro.afilechooser;
 
 public final class R {
 	public static final class id {
-		public static final int file_name = 0x7f090026;
-		public static final int explorer_fragment = 0x7f090024;
-		public static final int file_icon = 0x7f090025;
+		public static final int file_name = 0x7f090029;
+		public static final int explorer_fragment = 0x7f090027;
+		public static final int file_icon = 0x7f090028;
 	}
 	public static final class style {
 		public static final int fileChooserIcon = 0x7f070001;
@@ -27,9 +27,9 @@ public final class R {
 		public static final int file = 0x7f03000b;
 	}
 	public static final class drawable {
-		public static final int ic_folder = 0x7f020004;
-		public static final int ic_chooser = 0x7f020002;
-		public static final int ic_file = 0x7f020003;
+		public static final int ic_folder = 0x7f020005;
+		public static final int ic_chooser = 0x7f020003;
+		public static final int ic_file = 0x7f020004;
 	}
 	public static final class xml {
 		public static final int mimetypes = 0x7f040000;
