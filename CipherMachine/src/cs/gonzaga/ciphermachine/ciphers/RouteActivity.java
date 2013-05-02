@@ -58,11 +58,13 @@ public class RouteActivity extends AbstractCipherActivity {
 	
 	public String encipherString() {
 		String placeholder = getSpinnerSelectionById(R.id.route_activity_placeholder);
+		for (int i = 1; i < getRailLength(); i++) {placeholder.concat(String.valueOf(placeholder.charAt(0)));}
 		return RouteCipher.encode(getInputString(), getRailLength(), getTopStart(), getLeftStart(), getRoutePath(), placeholder);
 	}
 	
 	public String decipherString() {
 		String placeholder = getSpinnerSelectionById(R.id.route_activity_placeholder);
+		for (int i = 1; i < getRailLength(); i++) {placeholder.concat(String.valueOf(placeholder.charAt(0)));}
 		return RouteCipher.decode(getInputString(), getRailLength(), getTopStart(), getLeftStart(), getRoutePath(), placeholder);
 	}
 

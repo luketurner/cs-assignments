@@ -42,7 +42,8 @@
         android:layout_alignParentRight="true"
         android:layout_below="@+id/textView1"
         android:ems="2"
-        android:inputType="number" >
+        android:inputType="number"
+        android:text="2" >
 
         <requestFocus />
     </EditText>

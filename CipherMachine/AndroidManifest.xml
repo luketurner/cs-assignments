@@ -88,7 +88,9 @@
         </activity>
         <activity
             android:name="cs.gonzaga.ciphermachine.ReadFile"
-            android:label="@string/title_activity_read_file"
+            android:label="@string/title_activity_read_file">
+        </activity>
+        <activity
             android:name="com.ipaulpro.afilechooser.FileChooserActivity"
             android:icon="@drawable/ic_chooser"
             android:label="@string/choose_file" >
