@@ -33,7 +33,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignRight="@+id/cipher_select_caesar_box"
-        android:layout_below="@+id/textView2"
+        android:layout_below="@+id/viewFileInputView"
         android:ems="2"
         android:inputType="numberSigned"
         android:text="2" >
@@ -52,7 +52,7 @@
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/viewFileInputView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"

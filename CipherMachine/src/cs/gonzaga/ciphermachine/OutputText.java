@@ -1,8 +1,13 @@
 package cs.gonzaga.ciphermachine;
 
+import java.io.File;
+
+import android.net.Uri;
 import android.os.Bundle;
 import android.app.Activity;
+import android.content.Intent;
 import android.view.Menu;
+import android.view.View;
 import android.widget.TextView;
 
 public class OutputText extends Activity {
@@ -36,4 +41,25 @@ public class OutputText extends Activity {
 		return true;
 	}
 
+	public void onTextInputClick(View v) {
+		Intent smsIntent = new Intent(Intent.ACTION_VIEW);
+		smsIntent.setData(Uri.parse("sms:"));
+		smsIntent.putExtra("sms_body", outputText);
+		startActivity(smsIntent);
+	}
+	
+	public void onEmailInputClick(View v) {
+	     Intent emailIntent = new Intent(Intent.ACTION_SEND);
+	     emailIntent.putExtra(Intent.EXTRA_EMAIL, new String[]{""});
+	     emailIntent.putExtra(Intent.EXTRA_SUBJECT, "iCrypt");
+	     emailIntent.putExtra(Intent.EXTRA_TEXT, outputText);
+	     emailIntent.setType("plain/text");
+	     startActivity(Intent.createChooser(emailIntent, "Send email..."));
+	}
+	
+	public void onTweetInputClick(View v) {
+		String tweetUrl = "https://twitter.com/intent/tweet?text=" + outputText + " &url=";
+		Uri tweetUri = Uri.parse(tweetUrl);
+		startActivity(new Intent(Intent.ACTION_VIEW, tweetUri));
+	}
 }

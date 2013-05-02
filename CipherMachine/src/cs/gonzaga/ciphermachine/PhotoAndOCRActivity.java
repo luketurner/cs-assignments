@@ -6,6 +6,8 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 
+import com.googlecode.tesseract.android.TessBaseAPI;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.content.res.AssetManager;
@@ -207,14 +209,14 @@ public class PhotoAndOCRActivity extends Activity {
 
 		Log.v(TAG, "Before baseApi");
 
-		//TessBaseAPI baseApi = new TessBaseAPI();
-		//baseApi.setDebug(true);
-		//baseApi.init(DATA_PATH, lang);
-		//baseApi.setImage(bitmap);
+		TessBaseAPI baseApi = new TessBaseAPI();
+		baseApi.setDebug(true);
+		baseApi.init(DATA_PATH, lang);
+		baseApi.setImage(bitmap);
 
-		String recognizedText = "";//baseApi.getUTF8Text();
+		String recognizedText = baseApi.getUTF8Text();
 
-		//baseApi.end();
+		baseApi.end();
 
 		// Recognized text in recognizedText var.
 		// We will display a stripped out trimmed alpha-numeric version of it (if lang is eng)

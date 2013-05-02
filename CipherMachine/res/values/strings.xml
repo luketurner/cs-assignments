@@ -31,5 +31,12 @@
     <string name="text_hint">Text Hints</string>
     <string name="no_image">No Image</string>
     <string name="input_ocr_string">Input OCR String</string>
+    <string name="sms">SMS</string>
+    <string name="email">Email</string>
+    <string name="tweet">Tweet</string>
+    <string name="facebook">Facebook</string>
+    <string name="title_activity_read_file">ReadFile</string>
+    <string name="load_file">Load File</string>
+    <string name="no_file_chosen">No File Chosen</string>
 
 </resources>

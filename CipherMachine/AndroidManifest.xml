@@ -66,12 +66,29 @@
             android:name="cs.gonzaga.ciphermachine.PhotoAndOCRActivity"
             android:label="@string/title_activity_photo_and_ocr" >
         </activity>
+        <activity
+            android:name="com.ipaulpro.afilechooser.FileChooserActivity"
+            android:icon="@drawable/ic_chooser"
+            android:label="@string/choose_file" >
+            <intent-filter>
+                <action android:name="android.intent.action.GET_CONTENT" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.OPENABLE" />
+
+                <data android:mimeType="*/*" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="cs.gonzaga.ciphermachine.ReadFile"
+            android:label="@string/title_activity_read_file" >
+        </activity>
     </application>
-    
+
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.FLASHLIGHT" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    
+
     <uses-feature
         android:name="android.hardware.camera"
         android:required="false" />

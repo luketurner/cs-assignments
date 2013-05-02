@@ -1,7 +1,13 @@
 package cs.gonzaga.ciphermachine;
 
+import java.io.File;
+
+import com.ipaulpro.afilechooser.utils.FileUtils;
+
+import android.net.Uri;
 import android.os.Bundle;
 import android.app.Activity;
+import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.view.Menu;
 import android.view.View;
@@ -33,7 +39,8 @@ public class ChooseInputType extends Activity {
 	}
 	
 	public void onFileClicked(View v) {
-		
+	    Intent intent = new Intent(this, ReadFile.class);
+	    startActivity(intent);
 	}
 	
 	public void onOcrClicked(View v) {
