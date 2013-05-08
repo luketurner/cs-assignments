@@ -1,4 +1,5 @@
-As-yet-incomplete Othello-playing A.I.
+# Othello-playing A.I.
+# by Luke Turner and Antonio Ledesma
 
 **Requires:** Python 2.7 w/tkinter
 
@@ -6,7 +7,27 @@ As-yet-incomplete Othello-playing A.I.
 
 	python othello/game.py
 
+## To Run Game With C Extensions
+
+First, install numpy and cython -- they are required for the C extensions to work.
+
+Then, you need to edit othello/player.py and find the line near the top of the file: 
+
+	USE_LOCALEXT = False
+
+Change False to True:
+
+	USE_LOCALEXT = True
+
+Then build the C extensions with:
+
+	python setup.py build_ext
+
+Then you should be able to run the game normally.
+
 ## Architecture 
+
+*NOTE* For a graphical envisioning of the program's architechure, see module_graph.png and module_graph.dot.
 
 Has this general construction:
 
@@ -16,9 +37,11 @@ Special stuff for the GUI is in game.GuiGame, which overwrites some methods of A
 
 Actual GUI creation and handling is in board.BoardWindow, which subclasses tk.Frame. It's intended to be called in a separate process via multiprocessing, which is how GuiGame calls it.
 
-Another way of playing is the headless game client class headless.HeadlessGame. HeadlessGame init takes two paramters which designate the Player-subclassed classes to be playing each other. Headless games cannot use the plain old Player class.
+GuiGame also calls player.Player, and player.CPUPlayer in a separate process. CPUPlayer handles the AI parts: it has the alpha-beta pruning implementation and the heuristic fitness implementation. Additionally, there is a player.BoardNode class used by the alpha-beta pruning to represent search-space nodes.
 
-## Write-Up
+There is a C-typed version of the get_swaps_from_move() function located in cfunc.pyx. This is only used if C extensions are enabled, which requires numpy and gcc and Cython and compilation on the local machine (see notes on running game with C extensions). These extensions give a significant speed boost -- estimated to be on the order of 150% faster.
+
+## Write-Up (from before the A.I. was added)
 
 Our game and gui are defined by a few key characteristics. The GUI subclass is executed and runs in a separate process from the game logic process. Communication between the two is facilitated by a so-called interprocess "pipe." In general, the GUI recieves user input and alerts the game process with relevant information about what the user requested. The game process takes action to respond to this input, and also controls the flow of the game. Communication from the game process to the board process almost always consists of dictionaries representing board configurations & game states. A typical state dictionary sent from the game process contains information about the turn, the score, the player's move, the resulting changes in the board (from captures), and the current move index (used for undo).
 

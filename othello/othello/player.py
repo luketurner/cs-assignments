@@ -9,7 +9,7 @@ from threading import Timer, Event
 import re
 
 # LOCALEXT
-USE_LOCALEXT = True
+USE_LOCALEXT = False
 try:
 	from cfunc import get_swaps_from_move
 except:
