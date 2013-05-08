@@ -75,10 +75,10 @@ class AbstractGame(object):
 		def check_direction(opx, opy):
 			i = 1
 			to_change = []
-			while valid(opx(x,i),opy(y,i)) and self.board[opx(x,i)][opy(y,i)] == enemy_index:
+			while valid(opx(x,i),opy(y,i)) and self.board[opy(y,i)][opx(x,i)] == enemy_index:
 				to_change.append([opx(x,i), opy(y,i)])
 				i += 1
-			if valid(opx(x,i),opy(y,i)) and self.board[opx(x,i)][opy(y,i)] == index:
+			if valid(opx(x,i),opy(y,i)) and self.board[opy(y,i)][opx(x,i)] == index:
 				for square in to_change:
 					moves.append(self.square_location_map(square, index))
 
@@ -115,7 +115,7 @@ class AbstractGame(object):
 			# Make changes to internal board
 			for move in moves:
 				coords = self.from_location(move['loc'])
-				self.board[coords[0]][coords[1]] = index
+				self.board[coords[1]][coords[0]] = index
 
 	def full_board(self):
 		for x in range(len(self.board)):
@@ -174,7 +174,7 @@ class GuiGame(AbstractGame):
 			# Make changes to internal board
 			for move in moves:
 				coords = self.from_location(move['loc'])
-				self.board[coords[0]][coords[1]] = index
+				self.board[coords[1]][coords[0]] = index
 
 		# Store board state in history list.
 		self.board_history[self.moves_made] = {'board': deepcopy(self.board), 'moves': moves, 'initial_move': initial_move}

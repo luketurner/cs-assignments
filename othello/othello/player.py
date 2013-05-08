@@ -4,12 +4,9 @@ import functools
 
 import operator as op
 from itertools import product
+from copy import deepcopy
 from threading import Timer, Event
 import re
-
-import numpy
-
-import cfunc
 
 class Player:
 	def __init__(self, id):
@@ -40,20 +37,19 @@ class BoardNode(object):
 	
 	def next_moves(self):
 		for x,y in product(xrange(8), repeat=2):
-			if self.board[x,y] == 0:
-				moves = cfunc.get_swaps_from_move(self.board, x, y, self.player)
+			if self.board[y][x] == 0:
+				moves = self.get_swaps_from_move(x,y)
 				if len(moves) > 0:
 					moves.append([x,y])
 					yield self.alter_state(moves), [x,y]
 
 	def alter_state(self, moves):
 
-		board = numpy.empty_like(self.board)
-		board[:] = self.board
+		board = deepcopy(self.board)
 
 		# Make changes to internal board
 		for x,y in moves:
-			board[x,y] = self.player
+			board[y][x] = self.player
 
 		return board
 
@@ -78,10 +74,10 @@ class BoardNode(object):
 		def check_direction(opx, opy):
 			i = 1
 			to_change = []
-			while valid(opx(x,i),opy(y,i)) and self.board[opx(x,i),opy(y,i)] == enemy_index:
+			while valid(opx(x,i),opy(y,i)) and self.board[opy(y,i)][opx(x,i)] == enemy_index:
 				to_change.append([opx(x,i), opy(y,i)])
 				i += 1
-			if valid(opx(x,i),opy(y,i)) and self.board[opx(x,i),opy(y,i)] == self.player:
+			if valid(opx(x,i),opy(y,i)) and self.board[opy(y,i)][opx(x,i)] == self.player:
 				moves.extend(to_change)
 
 		def null(x,y):
@@ -107,11 +103,61 @@ class CPUPlayer:
 		self.them = 3 - id
 
 	def fitness(self, node):
+		score = 0;
 		scores = node.get_scores()
 		if self.us == 1:
-			return scores[0]-scores[1]
+			score = scores[0]-scores[1]
 		else:
-			return scores[1]-scores[0]
+			score = scores[1]-scores[0]
+
+		for i in range(8):
+
+			if node.board[0][i] == self.us:
+				score += 1
+			if node.board[0][i] == self.them:
+				score -= 2
+
+			if node.board[7][i] == self.us:
+				score += 1
+			if node.board[7][i] == self.them:
+				score -= 2
+
+			if node.board[i][0] == self.us:
+				score += 1
+			if node.board[i][0] == self.them:
+				score -= 2
+
+			if node.board[i][7] == self.us:
+				score += 1
+			if node.board[i][7] == self.them:
+				score -= 2
+
+		def score_corner(cx, cy, adjacent):
+			score = 0
+			if node.board[cx][cy] != self.us:
+				for x,y in adjacent:
+					if node.board[x][y] == self.us:
+						score -= 4
+					if node.board[x][y] == self.them:
+						score += 4
+			#else:
+				#for x in xrange(8):
+				#	for y in xrange(8):
+				#		if node.board[cx+x][cy-y] != self.us:
+				#			break
+				#		score += 1
+				#	if node.board[cx+x][7] != self.us:
+				#		break
+			return score
+
+		score += score_corner(0, 0, [[0,1],[1,0],[1,1]])
+		score += score_corner(7, 0, [[6,0],[7,1],[6,1]])
+		score += score_corner(0, 7, [[0,6],[1,6],[1,7]])
+		score += score_corner(7, 7, [[6,6],[6,7],[7,6]])
+
+		
+
+		return score
 
 	def ab_prune(self, node, depth, alpha, beta, done):
 
@@ -120,6 +166,7 @@ class CPUPlayer:
 
 		if node.player == self.us:
 			for child in node.children():
+
 				alpha = max(alpha, self.ab_prune(child, depth-1, alpha, beta, done))
 				if beta <= alpha:
 					break
@@ -135,14 +182,14 @@ class CPUPlayer:
 	def take_turn(self, board, out):
 		self.board = board
 
-		root = BoardNode(numpy.array(self.board), [], self.us)
+		root = BoardNode(self.board, [], self.us)
 
 		done = Event()
 		def done_timer(event):
 			event.set()
 
 		def prune(child):
-			a = self.ab_prune(child, 7, -1000, 1000, done)
+			a = self.ab_prune(child, 6, NegativeInfinity(), Infinity(), done)
 			print(child.move, a)
 			return a
 
