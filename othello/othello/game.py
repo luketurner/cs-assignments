@@ -21,10 +21,10 @@ class AbstractGame(object):
 		return [[0 for i in range(8)] for j in range(8)]
 
 	def setup_game(self):
-		self.board[3][3] = 1
-		self.board[3][4] = 2
-		self.board[4][4] = 1
-		self.board[4][3] = 2
+		self.board[3][3] = 2
+		self.board[3][4] = 1
+		self.board[4][4] = 2
+		self.board[4][3] = 1
 
 	def is_valid_move(self, coords, player):
 		if coords == [-1, -1]:
@@ -148,10 +148,10 @@ class GuiGame(AbstractGame):
 			super(GuiGame, self).__init__([CPUPlayer(1), Player(2)])
 
 		moves = [
-				{"loc": "D4", "color": self.colors[1]},
-				{"loc": "E4", "color": self.colors[2]},
-				{"loc": "D5", "color": self.colors[2]},
-				{"loc": "E5", "color": self.colors[1]},
+				{"loc": "D4", "color": self.colors[2]},
+				{"loc": "E4", "color": self.colors[1]},
+				{"loc": "D5", "color": self.colors[1]},
+				{"loc": "E5", "color": self.colors[2]},
 				]
 
 		if self.board_pipe.recv() == "initial_state":
