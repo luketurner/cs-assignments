@@ -1,3 +1,7 @@
+#
+# OTHELLO GAME MODULE GRAPH
+#
+
 # NOTES
 # diamond arrow indicates class creation (and data flow, through constructors, etc.)
 # triangular arrow indicates data flow, e.g. through return values (except for where noted)
