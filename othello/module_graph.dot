@@ -1,0 +1,25 @@
+# NOTES
+# DIAMOND ARROW INDICATES CLASS CREATION
+# NORMAL ARROW INDICATES DATA FLOW (EXCEPT FOR WHERE NOTED)
+# FILLED ARROWHEADS INDICATE INTRAPROCESS COMMUNICATION
+# EMPRY ARROWHEADS INDICATE INTERPROCESS COMMUNICATION
+# GREY NOTES INDICATE PROCESS ROOT CLASSES
+digraph othellogame {
+	node [shape=box;]; BoardNode; Player;
+	node [shape=diamond;style=filled;color=lightgrey]; GuiGame;
+	node [shape=diamond;]; AbstractGame;
+	node [shape=box;style=filled;color=grey]; BoardWindow;
+	CPUPlayer [
+		label="<f0> CPUPlayer| <f1> ab_prune|fitness heuristic";
+		shape="record";
+	];
+	BoardWindow->GuiGame [arrowhead="onormal"];
+	GuiGame->Player [arrowhead="diamond"];
+	Player->GuiGame;
+	GuiGame->BoardWindow [arrowhead="odiamond"];
+	GuiGame->CPUPlayer:f0 [arrowhead="odiamond"];
+	CPUPlayer:f0->GuiGame [arrowhead="onormal"];
+	CPUPlayer:f1->BoardNode [arrowhead="diamond"];
+	BoardNode->CPUPlayer:f1 [arrowhead="normal"];
+	AbstractGame->GuiGame [label="extends"];
+}
