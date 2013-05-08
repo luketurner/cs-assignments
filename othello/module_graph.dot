@@ -1,9 +1,9 @@
 # NOTES
-# DIAMOND ARROW INDICATES CLASS CREATION
-# NORMAL ARROW INDICATES DATA FLOW (EXCEPT FOR WHERE NOTED)
-# FILLED ARROWHEADS INDICATE INTRAPROCESS COMMUNICATION
-# EMPRY ARROWHEADS INDICATE INTERPROCESS COMMUNICATION
-# GREY NOTES INDICATE PROCESS ROOT CLASSES
+# diamond arrow indicates class creation (and data flow, through constructors, etc.)
+# triangular arrow indicates data flow, e.g. through return values (except for where noted)
+# filled arrowheads indicate intraprocess communication
+# empry arrowheads indicate interprocess communication
+# grey nodes indicate process root classes
 digraph othellogame {
 	node [shape=box;]; BoardNode; Player;
 	node [shape=diamond;style=filled;color=lightgrey]; GuiGame;
