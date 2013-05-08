@@ -8,6 +8,13 @@ from copy import deepcopy
 from threading import Timer, Event
 import re
 
+# LOCALEXT
+USE_LOCALEXT = True
+try:
+	from cfunc import get_swaps_from_move
+except:
+	print("cfunc import failed; did you run 'setup.py build_ext'?")
+
 class Player:
 	def __init__(self, id):
 		pass
@@ -38,14 +45,21 @@ class BoardNode(object):
 	def next_moves(self):
 		for x,y in product(xrange(8), repeat=2):
 			if self.board[y][x] == 0:
-				moves = self.get_swaps_from_move(x,y)
+				if USE_LOCALEXT:
+					moves = get_swaps_from_move(self.board, x, y, self.player)
+				else:
+					moves = self.get_swaps_from_move(x,y)
 				if len(moves) > 0:
 					moves.append([x,y])
 					yield self.alter_state(moves), [x,y]
 
 	def alter_state(self, moves):
 
-		board = deepcopy(self.board)
+		if USE_LOCALEXT:
+			board = numpy.empty_like(self.board)
+			board[:] = self.board
+		else:
+			board = deepcopy(self.board)
 
 		# Make changes to internal board
 		for x,y in moves:
@@ -182,14 +196,17 @@ class CPUPlayer:
 	def take_turn(self, board, out):
 		self.board = board
 
-		root = BoardNode(self.board, [], self.us)
+		if USE_LOCALEXT:
+			root = BoardNode(numpy.array(self.board), [], self.us)
+		else:
+			root = BoardNode(self.board, [], self.us)
 
 		done = Event()
 		def done_timer(event):
 			event.set()
 
 		def prune(child):
-			a = self.ab_prune(child, 6, NegativeInfinity(), Infinity(), done)
+			a = self.ab_prune(child, 6, -1000, 1000, done)
 			print(child.move, a)
 			return a
 
