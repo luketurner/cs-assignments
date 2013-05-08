@@ -127,22 +127,22 @@ class CPUPlayer:
 		for i in range(8):
 
 			if node.board[0][i] == self.us:
-				score += 1
+				score += 2
 			if node.board[0][i] == self.them:
 				score -= 2
 
 			if node.board[7][i] == self.us:
-				score += 1
+				score += 2
 			if node.board[7][i] == self.them:
 				score -= 2
 
 			if node.board[i][0] == self.us:
-				score += 1
+				score += 2
 			if node.board[i][0] == self.them:
 				score -= 2
 
 			if node.board[i][7] == self.us:
-				score += 1
+				score += 2
 			if node.board[i][7] == self.them:
 				score -= 2
 
