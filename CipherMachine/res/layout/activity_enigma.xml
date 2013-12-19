@@ -1,0 +1,171 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".EnigmaActivity" >
+
+    <TextView
+        android:id="@+id/enigma_activity_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:text="Enigma Cipher"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <Button
+        android:id="@+id/enigma_activity_encrypt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:onClick="onEncipherCall"
+        android:text="Encrypt" />
+
+    <Button
+        android:id="@+id/enigma_activity_decrypt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:onClick="onDecipherCall"
+        android:text="Decrypt" />
+
+    <Spinner
+        android:id="@+id/enigma_rotor_select_second"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/enigma_rotor_select_third"
+        android:layout_alignBottom="@+id/enigma_rotor_select_third"
+        android:layout_toLeftOf="@+id/enigma_rotor_select_third"
+        android:entries="@array/rotors_array"
+        tools:listitem="@android:layout/simple_spinner_dropdown_item" />
+
+    <Spinner
+        android:id="@+id/enigma_rotor_select_first"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/enigma_rotor_select_second"
+        android:layout_alignBottom="@+id/enigma_rotor_select_second"
+        android:layout_toLeftOf="@+id/enigma_rotor_select_second"
+        android:entries="@array/rotors_array"
+        tools:listitem="@android:layout/simple_spinner_dropdown_item" />
+
+    <Spinner
+        android:id="@+id/enigma_chars_second"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/enigma_chars_third"
+        android:layout_alignBottom="@+id/enigma_chars_third"
+        android:layout_toLeftOf="@+id/enigma_chars_third"
+        android:entries="@array/chars_array"
+        tools:listitem="@android:layout/simple_spinner_dropdown_item" />
+
+    <Spinner
+        android:id="@+id/enigma_ring_chars_second"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/enigma_ring_chars_third"
+        android:layout_alignBottom="@+id/enigma_ring_chars_third"
+        android:layout_toLeftOf="@+id/enigma_ring_chars_third"
+        android:entries="@array/chars_array"
+        tools:listitem="@android:layout/simple_spinner_dropdown_item" />
+
+    <Spinner
+        android:id="@+id/enigma_ring_chars_first"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/enigma_ring_chars_second"
+        android:layout_alignBottom="@+id/enigma_ring_chars_second"
+        android:layout_toLeftOf="@+id/enigma_ring_chars_second"
+        android:entries="@array/chars_array"
+        tools:listitem="@android:layout/simple_spinner_dropdown_item" />
+
+    <Spinner
+        android:id="@+id/enigma_chars_third"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/enigma_starting_label"
+        android:layout_toRightOf="@+id/enigma_activity_title"
+        android:entries="@array/chars_array"
+        tools:listitem="@android:layout/simple_spinner_dropdown_item" />
+
+    <TextView
+        android:id="@+id/enigma_rotors_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/enigma_activity_title"
+        android:layout_centerHorizontal="true"
+        android:text="Rotors"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <Spinner
+        android:id="@+id/enigma_rotor_select_third"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/enigma_rotors_label"
+        android:entries="@array/rotors_array"
+        tools:listitem="@android:layout/simple_spinner_dropdown_item" />
+
+    <Spinner
+        android:id="@+id/enigma_ring_chars_third"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/enigma_ring_label"
+        android:entries="@array/chars_array"
+        tools:listitem="@android:layout/simple_spinner_dropdown_item" />
+
+    <Spinner
+        android:id="@+id/enigma_chars_first"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/enigma_starting_label"
+        android:layout_toLeftOf="@+id/enigma_rotor_select_second"
+        android:entries="@array/chars_array"
+        tools:listitem="@android:layout/simple_spinner_dropdown_item" />
+
+    <Spinner
+        android:id="@+id/enigma_select_reflector"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/enigma_ring_chars_second"
+        android:layout_marginTop="16dp"
+        android:layout_toRightOf="@+id/enigma_chars_second"
+        android:entries="@array/enigma_reflector_array"
+        tools:listitem="@android:layout/simple_spinner_dropdown_item" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/enigma_select_reflector"
+        android:layout_alignBottom="@+id/enigma_select_reflector"
+        android:layout_alignLeft="@+id/enigma_activity_encrypt"
+        android:text="Reflector"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
+        android:id="@+id/enigma_ring_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/enigma_chars_second"
+        android:layout_centerHorizontal="true"
+        android:text="Ring"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
+        android:id="@+id/enigma_starting_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/enigma_rotor_select_second"
+        android:layout_centerHorizontal="true"
+        android:text="Starting"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+</RelativeLayout>

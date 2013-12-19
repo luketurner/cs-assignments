@@ -1,0 +1,63 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/RelativeLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".ShiftedCaesarsBoxActivity" >
+
+    <Button
+        android:id="@+id/cipher_select_caesar_box"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/caesar_box_activity_encrypt"
+        android:layout_alignBottom="@+id/caesar_box_activity_encrypt"
+        android:layout_alignParentRight="true"
+        android:onClick="onEncipherCall"
+        android:text="Decrypt" />
+
+    <Button
+        android:id="@+id/caesar_box_activity_encrypt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:onClick="onDecipherCall"
+        android:text="Encrypt" />
+
+    <EditText
+        android:id="@+id/caesar_box_activity_shift"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/cipher_select_caesar_box"
+        android:layout_below="@+id/caesars_box_activity_title"
+        android:ems="2"
+        android:inputType="numberSigned"
+        android:text="2" >
+
+        <requestFocus />
+    </EditText>
+
+    <TextView
+        android:id="@+id/caesars_box_activity_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/caesar_box_activity_shift"
+        android:layout_alignBottom="@+id/caesar_box_activity_shift"
+        android:layout_alignLeft="@+id/caesar_box_activity_encrypt"
+        android:text="Shift Amount"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
+        android:id="@+id/caesars_box_activity_keyword_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:text="Shifted Caesar&apos;s Box"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+</RelativeLayout>

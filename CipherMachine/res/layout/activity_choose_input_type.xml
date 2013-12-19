@@ -1,0 +1,62 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_alignParentBottom="true"
+    android:layout_alignParentLeft="true"
+    android:layout_alignParentRight="true"
+    android:layout_alignParentTop="true"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".ChooseInputTypeActivity" >
+
+    <Button
+        android:id="@+id/buttonManualInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onManualClicked"
+        android:text="@string/input_type_manual"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        android:typeface="monospace" />
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@android:drawable/button_onoff_indicator_on" />
+
+    <Button
+        android:id="@+id/buttonFileInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onFileClicked"
+        android:text="@string/input_type_file"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        android:typeface="monospace" >
+
+        <!-- android:textAlignment="center" /> -->
+
+    </Button>
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@android:drawable/button_onoff_indicator_on" />
+
+    <Button
+        android:id="@+id/buttonOcrInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onOcrClicked"
+        android:text="@string/ocr"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        android:typeface="monospace" />
+
+</LinearLayout>

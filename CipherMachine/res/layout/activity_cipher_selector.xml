@@ -1,0 +1,85 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/LinearLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".CipherSelector" >
+
+    <TextView
+        android:id="@+id/vigenere_activity_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Select A Cipher"
+        android:textAlignment="center"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <Button
+        android:id="@+id/cipher_select_caesar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onCipherSelected"
+        android:tag="@string/cipher_select_caesar"
+        android:text="@string/cipher_select_caesar" />
+
+    <Button
+        android:id="@+id/cipher_select_caesar_box"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onCipherSelected"
+        android:text="@string/cipher_select_caesar_box"
+        android:tag="@string/cipher_select_caesar_box" />
+
+    <Button
+        android:id="@+id/cipher_select_rail_fence"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onCipherSelected"
+        android:tag="@string/cipher_select_rail_fence"
+        android:text="@string/cipher_select_rail_fence" />
+
+    <Button
+        android:id="@+id/cipher_select_vigenere"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onCipherSelected"
+        android:tag="@string/cipher_select_vigenere"
+        android:text="@string/cipher_select_vigenere" />
+
+    <Button
+        android:id="@+id/cipher_select_adfgvx"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onCipherSelected"
+        android:tag="@string/cipher_select_adfgvx"
+        android:text="@string/cipher_select_adfgvx" />
+
+    <Button
+        android:id="@+id/cipher_select_enigma"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onCipherSelected"
+        android:tag="@string/cipher_select_enigma"
+        android:text="@string/cipher_select_enigma" />
+
+    <Button
+        android:id="@+id/cipher_select_playfair"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onCipherSelected"
+        android:tag="@string/cipher_select_playfair"
+        android:text="@string/cipher_select_playfair" />
+    
+    <Button
+        android:id="@+id/cipher_select_route"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onCipherSelected"
+        android:tag="@string/cipher_select_route"
+        android:text="@string/cipher_select_route" />
+
+</LinearLayout>

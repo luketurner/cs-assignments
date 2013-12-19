@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="cs.gonzaga.ciphermachine"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="9"
+        android:targetSdkVersion="17" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="cs.gonzaga.ciphermachine.InputText"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name="cs.gonzaga.ciphermachine.OutputText"
+            android:label="@string/title_activity_output_text" >
+        </activity>
+        <activity
+            android:name="cs.gonzaga.ciphermachine.CipherSelector"
+            android:label="@string/title_activity_cipher_selector"
+            android:parentActivityName="InputText" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="InputText" />
+        </activity>
+        <activity
+            android:name="cs.gonzaga.ciphermachine.ciphers.CaesarShiftActivity"
+            android:label="@string/title_activity_caesar_shift" >
+        </activity>
+        <activity
+            android:name="cs.gonzaga.ciphermachine.ChooseInputType"
+            android:label="@string/title_activity_choose_input_type" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="cs.gonzaga.ciphermachine.ciphers.ShiftedCaesarsBoxActivity"
+            android:label="@string/title_activity_shifted_caesars_box"
+            android:parentActivityName="cs.gonzaga.ciphermachine.CipherSelector" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="cs.gonzaga.ciphermachine.CipherSelector" />
+        </activity>
+        <activity
+            android:name="cs.gonzaga.ciphermachine.ciphers.RailFenceActivity"
+            android:label="@string/title_activity_rail_fence"
+            android:parentActivityName="cs.gonzaga.ciphermachine.CipherSelector" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="cs.gonzaga.ciphermachine.CipherSelector" />
+        </activity>
+        <activity
+            android:name="cs.gonzaga.ciphermachine.TakePhotoActivity"
+            android:label="@string/title_activity_take_photo" >
+        </activity>
+        <activity
+            android:name="cs.gonzaga.ciphermachine.PhotoAndOCRActivity"
+            android:label="@string/title_activity_photo_and_ocr" >
+        </activity>
+        <activity
+            android:name="cs.gonzaga.ciphermachine.ciphers.VigenereActivity"
+            android:label="@string/title_activity_vigenere" >
+        </activity>
+        <activity
+            android:name="cs.gonzaga.ciphermachine.ciphers.ADFGVXActivity"
+            android:label="@string/title_activity_adfgvx" >
+        </activity>
+        <activity
+            android:name="cs.gonzaga.ciphermachine.ciphers.EnigmaActivity"
+            android:label="@string/title_activity_enigma" >
+        </activity>
+        <activity
+            android:name="cs.gonzaga.ciphermachine.ciphers.RouteActivity"
+            android:label="@string/title_activity_route" >
+        </activity>
+        <activity
+            android:name="cs.gonzaga.ciphermachine.ciphers.PlayfairActivity"
+            android:label="@string/title_activity_playfair" >
+        </activity>
+        <activity
+            android:name="cs.gonzaga.ciphermachine.ReadFile"
+            android:label="@string/title_activity_read_file">
+        </activity>
+        <activity
+            android:name="com.ipaulpro.afilechooser.FileChooserActivity"
+            android:icon="@drawable/ic_chooser"
+            android:label="@string/choose_file" >
+            <intent-filter>
+                <action android:name="android.intent.action.GET_CONTENT" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.OPENABLE" />
+
+                <data android:mimeType="*/*" />
+            </intent-filter>
+        </activity>
+
+    </application>
+
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.FLASHLIGHT" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.camera.autofocus"
+        android:required="false" />
+
+</manifest>

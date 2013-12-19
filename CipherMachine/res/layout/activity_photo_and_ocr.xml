@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".ReadFile" >
+
+    <Button
+        android:id="@+id/inputOCRButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onInputOCRClick"
+        android:text="@string/input_ocr_string"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:typeface="monospace" />
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@android:drawable/button_onoff_indicator_on" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/button_text"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:typeface="monospace" />
+
+    <EditText
+        android:id="@+id/noImageView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/text_hint"
+        android:textSize="25sp"
+        android:typeface="monospace" />
+    
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="2.93"
+        android:gravity="center_horizontal|center_vertical" >
+    
+	    <TextView
+	        android:id="@+id/noImageView"
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content"
+	        android:gravity="center_horizontal"
+	        android:text="@string/no_image"
+	        android:textSize="15sp"
+	        android:textStyle="bold"
+	        android:typeface="monospace" />
+	    
+	    <ImageView android:id="@+id/image"
+	    		   android:layout_width="fill_parent"
+	    		   android:layout_height="wrap_content"/>
+    		   
+   	</RelativeLayout>
+
+</LinearLayout>
